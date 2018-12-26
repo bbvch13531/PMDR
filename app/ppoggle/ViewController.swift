@@ -9,12 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+	let pgTabBarController = PGTabBarController()
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
-	}
-
-
+		self.present(pgTabBarController, animated: true, completion: nil)
+	}	
 }
-

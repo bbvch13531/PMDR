@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C5BEB1A9537AC31FF56B330 /* Pods_ppoggle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CF2F8719C02A51FB269CC2 /* Pods_ppoggle.framework */; };
 		9FC8581321B6CE3B00BA05CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC8581221B6CE3B00BA05CA /* AppDelegate.swift */; };
 		9FC8581521B6CE3B00BA05CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC8581421B6CE3B00BA05CA /* ViewController.swift */; };
 		9FC8581821B6CE3B00BA05CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC8581621B6CE3B00BA05CA /* Main.storyboard */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D058A1BC3F9D4E16351EEA5 /* Pods-ppoggle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ppoggle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ppoggle/Pods-ppoggle.debug.xcconfig"; sourceTree = "<group>"; };
+		83CF2F8719C02A51FB269CC2 /* Pods_ppoggle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ppoggle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC8580F21B6CE3B00BA05CA /* ppoggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ppoggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC8581221B6CE3B00BA05CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FC8581421B6CE3B00BA05CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		9FC8582621B6CE3C00BA05CA /* ppoggleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ppoggleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC8582A21B6CE3C00BA05CA /* ppoggleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ppoggleTests.swift; sourceTree = "<group>"; };
 		9FC8582C21B6CE3C00BA05CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1C9B106BB00757C6BCA853D /* Pods-ppoggle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ppoggle.release.xcconfig"; path = "Pods/Target Support Files/Pods-ppoggle/Pods-ppoggle.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C5BEB1A9537AC31FF56B330 /* Pods_ppoggle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +63,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12297B0CA28141D14FA51477 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D058A1BC3F9D4E16351EEA5 /* Pods-ppoggle.debug.xcconfig */,
+				D1C9B106BB00757C6BCA853D /* Pods-ppoggle.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1C33195C552B43C1C56BC85C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83CF2F8719C02A51FB269CC2 /* Pods_ppoggle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9FC8580621B6CE3B00BA05CA = {
 			isa = PBXGroup;
 			children = (
 				9FC8581121B6CE3B00BA05CA /* ppoggle */,
 				9FC8582921B6CE3C00BA05CA /* ppoggleTests */,
 				9FC8581021B6CE3B00BA05CA /* Products */,
+				12297B0CA28141D14FA51477 /* Pods */,
+				1C33195C552B43C1C56BC85C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,9 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FC8582F21B6CE3C00BA05CA /* Build configuration list for PBXNativeTarget "ppoggle" */;
 			buildPhases = (
+				0964297F7AFDFAEF6B196945 /* [CP] Check Pods Manifest.lock */,
 				9FC8580B21B6CE3B00BA05CA /* Sources */,
 				9FC8580C21B6CE3B00BA05CA /* Frameworks */,
 				9FC8580D21B6CE3B00BA05CA /* Resources */,
+				85FDA86E71A749D5EB390A28 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,6 +220,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0964297F7AFDFAEF6B196945 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ppoggle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85FDA86E71A749D5EB390A28 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ppoggle/Pods-ppoggle-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ppoggle/Pods-ppoggle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9FC8580B21B6CE3B00BA05CA /* Sources */ = {
@@ -362,15 +427,13 @@
 		};
 		9FC8583021B6CE3C00BA05CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D058A1BC3F9D4E16351EEA5 /* Pods-ppoggle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ZMC86H7GX;
 				INFOPLIST_FILE = ppoggle/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bbvch13531.ppoggle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -380,15 +443,13 @@
 		};
 		9FC8583121B6CE3C00BA05CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1C9B106BB00757C6BCA853D /* Pods-ppoggle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ZMC86H7GX;
 				INFOPLIST_FILE = ppoggle/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bbvch13531.ppoggle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -404,11 +465,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ZMC86H7GX;
 				INFOPLIST_FILE = ppoggleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bbvch13531.ppoggleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -425,11 +482,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ZMC86H7GX;
 				INFOPLIST_FILE = ppoggleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bbvch13531.ppoggleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

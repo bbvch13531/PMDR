@@ -3,4 +3,5 @@ target 'ppoggle' do
     use_frameworks!
 
     pod 'UICircularProgressRing'
+    pod 'Alamofire'
 end

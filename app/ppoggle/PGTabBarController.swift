@@ -15,7 +15,7 @@ class PGTabBarController : UITabBarController{
 		let timerController = TimerController()
 		let settingController = SettingController()
 		self.viewControllers = [timerController,settingController]
-		self.view.backgroundColor = UIColor.red
+//		self.view.backgroundColor = UIColor.red
 		timerController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
 		settingController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 1)
 		

@@ -12,9 +12,6 @@ import UICircularProgressRing
 
 
 class TimerController:UIViewController{
-	//	required init?(coder aDecoder: NSCoder) {
-	//		super.init(nibName: nil, bundle: nil)
-	//	}
 	
 	var frame : CGRect{
 		get{
@@ -24,30 +21,10 @@ class TimerController:UIViewController{
 	lazy var progressRing = UICircularProgressRing(frame: frame)
 	
 	override func viewDidLoad() {
-		self.title = "Timer"
 		
 		setUpNavigationBar()
 		setUpProgressRing()
 		setUpBtns()
-		
-		//: Animate with a given duration
-		//
-		//		//: Pause and continue animations dynamically
-		//		DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-		//			progressRing.pauseProgress()
-		//			//: Customize the ring even more
-		//			progressRing.showsValueKnob = true
-		//			progressRing.valueKnobSize = 20
-		//			progressRing.valueKnobColor = .green
-		//
-		//		}
-		//
-		//		//: Continue the animation whenever you want
-		//		DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-		//			progressRing.continueProgress()
-		//		}
-		//
-		//		//: For more information [read the docs](https://goo.gl/JJCHeo)
 		
 	}
 	private func setUpNavigationBar(){
@@ -56,22 +33,25 @@ class TimerController:UIViewController{
 		let screenHeight = screenRect.size.height
 		
 		let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 50, width: screenWidth, height: 70))
-		self.view.addSubview(navBar);
+		self.view.addSubview(navBar)
 		
-		let navItem = UINavigationItem(title: "SomeTitle");
-		let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: nil, action: nil);
-		navItem.leftBarButtonItem = doneItem;
+		let navItem = UINavigationItem(title: "Timer")
+		let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: nil, action: nil)
+		navItem.leftBarButtonItem = doneItem
 		
-		navBar.setItems([navItem], animated: false);
+		navBar.setItems([navItem], animated: false)
 		
 	}
 	private func setUpProgressRing(){
 		progressRing.backgroundColor = .white
-		progressRing.outerRingColor = .blue
+		progressRing.outerRingColor = .red
 		progressRing.innerRingColor = .white
 		progressRing.outerRingWidth = 10
+		progressRing.maxValue = 60
+		progressRing.startAngle = 270
 		progressRing.innerRingWidth = 8
 		progressRing.ringStyle = .ontop
+		progressRing.valueIndicator = "min"
 		progressRing.font = UIFont.boldSystemFont(ofSize: 40)
 		
 		//		progressRing.startProgress(to: 100, duration: 3){
@@ -102,7 +82,7 @@ class TimerController:UIViewController{
 		resetBtn.addTarget(self, action: #selector(self.resetBtnClick), for: .touchDown)
 	}
 	@objc func startBtnClick(_ sender: UIButton?){
-		self.progressRing.startProgress(to: 100, duration: 2){
+		self.progressRing.startProgress(to: 60, duration: 2){
 			print("Done!!")
 		}
 	}

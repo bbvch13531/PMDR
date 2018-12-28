@@ -84,6 +84,11 @@ class TimerController:UIViewController{
 	@objc func startBtnClick(_ sender: UIButton?){
 		self.progressRing.startProgress(to: 60, duration: 2){
 			print("Done!!")
+			let alert = UIAlertController(title: "휴식 끝!", message: "다시 뽀모도로를 시작하세요.", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: NSLocalizedString("확인", comment: "Default action"), style: .default, handler: { _ in
+				NSLog("The \"OK\" alert occured.")
+			}))
+			self.present(alert, animated: true, completion: nil)
 		}
 	}
 	@objc func resetBtnClick(_ sender: UIButton?){

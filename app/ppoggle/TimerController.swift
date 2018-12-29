@@ -13,26 +13,33 @@ import UICircularProgressRing
 
 class TimerController:UIViewController{
 	
+	// frame to make progressRing
 	var frame : CGRect{
 		get{
 			return CGRect(x: 50, y: 100, width: 300, height: 300)
 		}
 	}
+	
+	// Using lazy var
 	lazy var progressRing = UICircularProgressRing(frame: frame)
 	
 	override func viewDidLoad() {
 		
+		// Set up UI
 		setUpNavigationBar()
 		setUpProgressRing()
 		setUpBtns()
 		
 	}
 	private func setUpNavigationBar(){
+		
+		// Safearea screen size
 		let screenRect = UIScreen.main.bounds
 		let screenWidth = screenRect.size.width
 		let screenHeight = screenRect.size.height
 		
-		let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 50, width: screenWidth, height: 70))
+		// make Navi bar and add
+		let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 50, width: screenWidth, height: 44))
 		self.view.addSubview(navBar)
 		
 		let navItem = UINavigationItem(title: "Timer")

@@ -15,7 +15,6 @@ class SettingController: UIViewController{
 //	}
 	
 	override func viewDidLoad() {
-		self.title = "Setting"
 		self.view.backgroundColor = UIColor.blue
 	}
 }

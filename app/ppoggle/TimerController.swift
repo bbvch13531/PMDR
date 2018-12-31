@@ -27,20 +27,26 @@ class TimerController:UIViewController{
 	var resetBtn: UIButton!
 	var completedPomoLabel: UILabel!
 	
-	var isTimerRunning = false
+	let myRed = UIColor(red:1.00, green:0.33, blue:0.31, alpha:1.0)
+	let myGray = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
+	let myYellow = UIColor(red:1.00, green:0.77, blue:0.38, alpha:1.0)
+	
+	
+	var isPomoTimerRunning = false
 	override func viewDidLoad() {
 		
 		// Set up UI
-		setUpNavigationBar()
+//		setUpNavigationBar()
 		setUpProgressRing()
 		setUpBtns()
 		setUpLabels()
-		UIFont.familyNames.forEach {
-			print($0)
-			UIFont.fontNames(forFamilyName: $0).forEach {
-				print("  \($0)")
-			}
-		}
+
+//		UIFont.familyNames.forEach {
+//			print($0)
+//			UIFont.fontNames(forFamilyName: $0).forEach {
+//				print("  \($0)")
+//			}
+//		}
 		
 	}
 	private func setUpNavigationBar(){
@@ -50,31 +56,21 @@ class TimerController:UIViewController{
 		let screenWidth = screenRect.size.width
 		let screenHeight = screenRect.size.height
 		
-		// make Navi bar and add
-		let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 50, width: screenWidth, height: 44))
-		self.view.addSubview(navBar)
-		
-		let navItem = UINavigationItem(title: "Timer")
-//		let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: nil, action: nil)
-//		navItem.leftBarButtonItem = doneItem
-		
-		navBar.setItems([navItem], animated: false)
 		
 	}
 	private func setUpProgressRing(){
-		let myRed = UIColor(red:1.00, green:0.33, blue:0.31, alpha:1.0)
-		let myGray = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
-		let myYellow = UIColor(red:1.00, green:0.77, blue:0.38, alpha:1.0)
+		
 		
 		progressRing.backgroundColor = .white
 		progressRing.outerRingColor = myGray
-		progressRing.innerRingColor = myRed
+		
 		progressRing.outerRingWidth = 25
-		progressRing.maxValue = 60
+		
 		progressRing.startAngle = 270
 		progressRing.innerRingWidth = 25
 		progressRing.ringStyle = .ontop
 		progressRing.valueIndicator = "min"
+		
 		progressRing.font = UIFont.boldSystemFont(ofSize: 40)
 
 		self.view.addSubview(progressRing)
@@ -108,43 +104,97 @@ class TimerController:UIViewController{
 	}
 	private func setUpLabels(){
 		completedPomoLabel = UILabel(frame: CGRect(x: 120, y: 160, width: 200, height: 50))
-		completedPomoLabel.text = "오늘 완료한 뽀모도로"
+		completedPomoLabel.text = "Today : "
 		self.view.addSubview(completedPomoLabel)
 	}
-	@objc func startBtnClick(_ sender: UIButton?){
-		// Set Timer running true
-		self.isTimerRunning = true
-		startBtn.isHidden = true
-		pauseBtn.isHidden = false
-		self.progressRing.startProgress(to: 60, duration: 2){
+	
+	// MARK: Start trigger PomoTimer.
+	func startPomoTimer(){
+		self.progressRing.innerRingColor = self.myRed
+		self.progressRing.maxValue = 25
+
+		NSLog("progressRing.value = \(self.progressRing.currentValue) before reset, at StartPomoTimer")
+		
+		NSLog("progressRing.value = \(self.progressRing.currentValue) after reset, at StartPomoTimer")
+		self.progressRing.startProgress(to: 25, duration: 5){
 			print("Done!!")
 			// When progress complete, set timer running false
-			self.isTimerRunning = false
+			self.isPomoTimerRunning = false
 			self.startBtn.isHidden = false
 			self.pauseBtn.isHidden = true
 			
+			
+			self.progressRing.startProgress(to: 0, duration: 0,completion: {
+				self.startBreakTimer()
+			})
+//			self.progressRing.resetProgress()
+			
+			
 			// Show up alert
-			let alert = UIAlertController(title: "뽀모도로 1개 완성!", message: "5분의 휴식을 즐기세요.", preferredStyle: .alert)
+			let alert = UIAlertController(title: "ppoggle completed", message: "Time to rest", preferredStyle: .alert)
 			alert.addAction(UIAlertAction(title: NSLocalizedString("확인", comment: "Default action"), style: .default, handler: { _ in
 				NSLog("The \"OK\" alert occured.")
 			}))
 			self.present(alert, animated: true, completion: nil)
+			
 		}
+		
+	}
+	func startBreakTimer(){
+		
+		self.progressRing.innerRingColor = self.myYellow
+		self.progressRing.maxValue = 5
+		self.progressRing.value = 0
+		NSLog("progressRing.value = \(self.progressRing.currentValue) before reset, at StartBreakTimer")
+		self.progressRing.resetProgress()
+		NSLog("progressRing.value = \(self.progressRing.currentValue) after reset, at StartBreakTimer")
+		self.progressRing.startProgress(to: 5, duration: 5){
+			print("Done!!")
+			// When progress complete, set timer running false
+			self.isPomoTimerRunning = false
+			self.startBtn.isHidden = false
+			self.pauseBtn.isHidden = true
+			
+			self.progressRing.startProgress(to: 0, duration: 0,completion: {
+					self.startPomoTimer()
+			})
+			
+			
+			// Show up alert
+			let alert = UIAlertController(title: "Break finished", message: "Time to focus on", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: NSLocalizedString("확인", comment: "Default action"), style: .default, handler: { _ in
+				NSLog("The \"OK\" alert occured.")
+			}))
+			self.present(alert, animated: true, completion: nil)
+			
+		}
+		
+	}
+	func pausePomoTimer(){
+		
+	}
+	@objc func startBtnClick(_ sender: UIButton?){
+		// Set Timer running true
+		self.isPomoTimerRunning = true
+		startBtn.isHidden = true
+		pauseBtn.isHidden = false
+		startPomoTimer()
+		
 	}
 	
 	@objc func pauseBtnClick(_ sender: UIButton?){
-		if self.isTimerRunning == true{
-			self.isTimerRunning = false
+		if self.isPomoTimerRunning == true{
+			self.isPomoTimerRunning = false
 			startBtn.isHidden = true
 			pauseBtn.isHidden = false
 			self.progressRing.pauseProgress()
 		} else {
-			self.isTimerRunning = true
+			self.isPomoTimerRunning = true
 			self.progressRing.continueProgress()
 		}
 	}
 	@objc func resetBtnClick(_ sender: UIButton?){
-		isTimerRunning = false
+		isPomoTimerRunning = false
 		self.progressRing.resetProgress()
 	}
 }

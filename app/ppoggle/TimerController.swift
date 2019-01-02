@@ -37,6 +37,9 @@ class TimerController:UIViewController{
 	var pomoMin : Int = 25
 	var breakMin : Int = 5
 	
+	var targetPomo : Int = 20
+	var donePomo : Int = 0
+	
 	let myRed = UIColor(red:1.00, green:0.33, blue:0.31, alpha:1.0)
 	let myGray = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
 	let myYellow = UIColor(red:1.00, green:0.77, blue:0.38, alpha:1.0)
@@ -122,7 +125,8 @@ class TimerController:UIViewController{
 		timerLabel.text = "\(minutes ?? 25):00"
 		timerLabel.font = UIFont(name: "SpoqaHanSans-Bold", size: 40)
 		completedPomoLabel = UILabel(frame: CGRect(x: 120, y: 160, width: 200, height: 50))
-		completedPomoLabel.text = "Today : "
+		completedPomoLabel.font = UIFont(name: "Arial", size: 25)
+		completedPomoLabel.text = "Today : \(donePomo) / \(targetPomo)"
 		
 		self.view.addSubview(timerLabel)
 		self.view.addSubview(completedPomoLabel)
@@ -148,6 +152,7 @@ class TimerController:UIViewController{
 				self.finishProgress()
 				self.isPomoTimerRunning = false
 	//			self.progressRing.resetProgress()
+				self.updateDonePomo()
 				
 				self.pauseBtn.isHidden = true
 				
@@ -193,6 +198,10 @@ class TimerController:UIViewController{
 			}
 //		}
 		// else : When resetBtn is clicked
+	}
+	func updateDonePomo(){
+		self.donePomo += 1
+		self.completedPomoLabel.text = "Today : \(donePomo)"
 	}
 	@objc func updateTimer(){
 		if seconds == 0 {

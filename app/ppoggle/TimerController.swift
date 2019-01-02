@@ -201,7 +201,7 @@ class TimerController:UIViewController{
 	}
 	func updateDonePomo(){
 		self.donePomo += 1
-		self.completedPomoLabel.text = "Today : \(donePomo)"
+		self.completedPomoLabel.text = "Today : \(donePomo) / \(targetPomo)"
 	}
 	@objc func updateTimer(){
 		if seconds == 0 {

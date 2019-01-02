@@ -21,11 +21,12 @@ class SettingController: UIViewController, UITableViewDelegate, UITableViewDataS
 		return titleData
 	}()
 	
+	var sectionList =  [[String]]()
+	
 	let screenSize = UIScreen.main.bounds
 	let screenWidth = UIScreen.main.bounds.size.width
 	let screenHeight = UIScreen.main.bounds.size.height
 	
-	var tabelCellCnt = 0
 	/// view가 appear될 때마다 실행되는 함수.
 	/// tableView의 data를 reload함
 	/// - Parameter animated: animated: Bool
@@ -93,15 +94,10 @@ class SettingController: UIViewController, UITableViewDelegate, UITableViewDataS
 //		cell.settingBtn = sbtn
 //		NSLog("indexPath.row = %d, cell.name = %s",indexPath.row, cell.settingName)
 		
-		var settingTitle:String
-		print("row = \(indexPath.row), section = \(indexPath.section), cnt = \(tabelCellCnt), text = \(self.list[indexPath.row+indexPath.section])")
+		var rowList = self.sectionList[indexPath.section]
+		print("rowList[0] = \(rowList[0]), section = \(indexPath.section), row = \(indexPath.row)")
+		cell.textLabel!.text = rowList[indexPath.row]
 		
-//		cell.textLabel!.text = self.list[indexPath.row+indexPath.section]
-		cell.textLabel!.text = self.list[tabelCellCnt]
-		tabelCellCnt += 1
-		if tabelCellCnt == 6{
-			tabelCellCnt = 0
-		}
 		return cell
 	}
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -153,11 +149,19 @@ class SettingController: UIViewController, UITableViewDelegate, UITableViewDataS
 		return 4
 	}
 	func setUpList(){
-		let titleArr = ["프로필 수정","알림","서비스 약관","개인정보 처리방침","로그아웃","탈퇴하기"]
+//		let section0 = ["프로필 수정"]
+//		let sectoin1 = ["알림"]
+//		let sectoin2 = ["서비스 약관","개인정보 처리방침"]
+//		let section3 = ["로그아웃","탈퇴하기"]
+//		titleArr = ["프로필 수정","알림","서비스 약관","개인정보 처리방침","로그아웃","탈퇴하기"]
 		
-		for title in titleArr {
-			self.list.append(title)
-		}
+		self.sectionList.append(["프로필 수정"])
+		self.sectionList.append(["알림"])
+		self.sectionList.append(["서비스 약관","개인정보 처리방침"])
+		self.sectionList.append(["로그아웃","탈퇴하기"])
+//		for title in titleArr {
+//			self.list.append(title)
+//		}
 		
 	}
 }

@@ -39,8 +39,10 @@
     <p>함께하기 메뉴 (구현중)</p>
 </div>
 </br></br>
+
 ## Features
 Pomodoro method is one of time-management methods. By repeating focus on for 25 minutes and take a break for 5 minutes, increase concentration time. ppoggle is after its name to pomodoro so that make its sound to "ㅃㅗㄲㅡㄹ".
+
 ## How to use
 
 <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/app_store.png" width="150px">

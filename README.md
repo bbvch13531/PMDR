@@ -42,6 +42,7 @@
 
 ## Features
 Pomodoro method is one of time-management methods. By repeating focus on for 25 minutes and take a break for 5 minutes, increase concentration time. ppoggle is after its name to pomodoro so that make its sound to "ㅃㅗㄲㅡㄹ".
+ppoggle's main feature is ppoggle user group that sharing one's poggle count(concentration hours). By sharing ppoggle count, user would motivated so that they could be more productive.
 
 ## How to use
 

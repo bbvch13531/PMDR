@@ -24,34 +24,32 @@
 
 <div align="middle">
     <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/report_today.png" width="300px">
-    <p>리포트 메뉴 - 오늘</p> 
+    <p>리포트 메뉴 - 오늘 (구현중)</p> 
 </div>
 </br></br>
 
 <div align="middle">
     <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/report_thisweek.png" width="300px">
-    <p>리포트 메뉴 - 이번주</p>  
+    <p>리포트 메뉴 - 이번주 (구현중)</p>  
 </div>
 </br></br>
 
 <div align="middle">
     <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/user_group.png" width="300px">
-    <p>함께하기 메뉴</p>
+    <p>함께하기 메뉴 (구현중)</p>
 </div>
 </br></br>
 
-## Features
-
-
 ## How to use
 
+<img src="https://github.com/bbvch13531/ppoggle/blob/master/images/app_store.png" width="150px">
+</br>
 ppoggle is about to download on the App store soon.
-<img src="https://github.com/bbvch13531/ppoggle/blob/master/images/app_store.png" width="100px">
 
 ## License
 ppoggle is licensed under the [GNU GENERAL PUBLIC LICENSE v3](https://github.com/bbvch13531/ppoggle/blob/master/LICENSE).
 ```
-Copyright (C) 2018-present,  bbvch13531
+Copyright (C) 2018-present, bbvch13531
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

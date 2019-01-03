@@ -5,10 +5,10 @@
 ## Overview
 
 <div align="middle">
-    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/timer.png" height="250px">
+    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/ppoggle_demo1_crop" width="250px">
 </div>
+타이머 화면
 
-![asd](https://github.com/bbvch13531/ppoggle/blob/master/images/timer.png)
 
 ## Features
 

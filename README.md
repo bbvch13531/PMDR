@@ -44,8 +44,9 @@
 
 
 ## How to use
-![](https://github.com/bbvch13531/ppoggle/blob/master/images/app_store.png)
+
 ppoggle is about to download on the App store soon.
+<img src="https://github.com/bbvch13531/ppoggle/blob/master/images/app_store.png" width="100px">
 
 ## License
 ppoggle is licensed under the [GNU GENERAL PUBLIC LICENSE v3](https://github.com/bbvch13531/ppoggle/blob/master/LICENSE).

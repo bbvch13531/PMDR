@@ -4,6 +4,12 @@
 
 ## Overview
 
+<div align="middle">
+    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/timer.png" height="250px">
+</div>
+
+![asd](https://github.com/bbvch13531/ppoggle/blob/master/images/timer.png)
+
 ## Features
 
 

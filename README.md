@@ -5,32 +5,36 @@
 ## Overview
 
 <div align="middle">
-    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/ppoggle_demo1_crop.gif" width="250px">
+    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/ppoggle_demo1_crop.gif" width="300px">
+    
     Demo
 </div>
 </br></br>
 
 <div align="middle">
-    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/timer.png" width="250px">
-    타이머 메뉴
+    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/timer.png" width="300px">
+    <p>타이머 메뉴</p>
 </div>
 </br></br>
 
 <div align="middle">
-    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/report_today.png" width="250px">
-    리포트 메뉴 - 오늘
+    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/report_today.png" width="300px">
+    <p>리포트 메뉴 - 오늘</p>
+    
 </div>
 </br></br>
 
 <div align="middle">
-    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/report_thisweek.png" width="250px">
-    리포트 메뉴 - 이번주
+    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/report_thisweek.png" width="300px">
+    <p>리포트 메뉴 - 이번주</p>
+    
 </div>
 </br></br>
 
 <div align="middle">
-    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/user_group.png" width="250px">
-    함께하기 메뉴
+    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/user_group.png" width="300px">
+    <p>함께하기 메뉴</p>
+    
 </div>
 </br></br>
 
@@ -38,7 +42,8 @@
 
 
 ## How to use
-ppoggle is about to release via App store
+![]("https://github.com/bbvch13531/ppoggle/blob/master/images/app_store.png")
+ppoggle is about to download on the App store soon.
 
 ## License
 ppoggle is licensed under the [GNU GENERAL PUBLIC LICENSE v3](https://github.com/bbvch13531/ppoggle/blob/master/LICENSE).

@@ -6,8 +6,13 @@
 
 <div align="middle">
     <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/ppoggle_demo1_crop.gif" width="300px">
-    
-    Demo
+    <p>Demo</p>
+</div>
+</br></br>
+
+<div align="middle">
+    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/main_scene.png" width="300px">
+    <p>메인화면</p>
 </div>
 </br></br>
 
@@ -19,22 +24,19 @@
 
 <div align="middle">
     <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/report_today.png" width="300px">
-    <p>리포트 메뉴 - 오늘</p>
-    
+    <p>리포트 메뉴 - 오늘</p> 
 </div>
 </br></br>
 
 <div align="middle">
     <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/report_thisweek.png" width="300px">
-    <p>리포트 메뉴 - 이번주</p>
-    
+    <p>리포트 메뉴 - 이번주</p>  
 </div>
 </br></br>
 
 <div align="middle">
     <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/user_group.png" width="300px">
     <p>함께하기 메뉴</p>
-    
 </div>
 </br></br>
 
@@ -42,7 +44,7 @@
 
 
 ## How to use
-![]("https://github.com/bbvch13531/ppoggle/blob/master/images/app_store.png")
+![](https://github.com/bbvch13531/ppoggle/blob/master/images/app_store.png)
 ppoggle is about to download on the App store soon.
 
 ## License

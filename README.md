@@ -6,28 +6,33 @@
 
 <div align="middle">
     <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/ppoggle_demo1_crop.gif" width="250px">
+    Demo
 </div>
-Demo
+</br></br>
 
 <div align="middle">
     <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/timer.png" width="250px">
+    타이머 메뉴
 </div>
-타이머 메뉴
+</br></br>
 
 <div align="middle">
     <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/report_today.png" width="250px">
+    리포트 메뉴 - 오늘
 </div>
-리포트 메뉴 - 오늘
+</br></br>
 
 <div align="middle">
     <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/report_thisweek.png" width="250px">
+    리포트 메뉴 - 이번주
 </div>
-리포트 메뉴 - 이번주
+</br></br>
 
 <div align="middle">
     <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/user_group.png" width="250px">
+    함께하기 메뉴
 </div>
-함께하기 메뉴
+</br></br>
 
 ## Features
 

@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import UICircularProgressRing
 
-
 class TimerController:UIViewController{
 	
 	// frame to make progressRing
@@ -31,9 +30,11 @@ class TimerController:UIViewController{
 	var completedPomoLabel : UILabel!
 	var timerLabel : UILabel!
 	
+	// State of current timer
 	var minutes : Int = 25
 	var seconds : Int = 0
 	
+	// Default value of duration of timer
 	var pomoMin : Int = 25
 	var breakMin : Int = 5
 	
@@ -46,6 +47,7 @@ class TimerController:UIViewController{
 	
 	
 	var isPomoTimerRunning = false
+	var isReset = false
 	
 	override func viewDidLoad() {
 		
@@ -64,6 +66,11 @@ class TimerController:UIViewController{
 //		}
 		
 	}
+	override func viewWillDisappear(_ animated: Bool) {
+//		self.progressRing
+		self.isPomoTimerRunning = false
+		timer.invalidate()
+	}
 	private func setUpNavigationBar(){
 		
 		// Safearea screen size
@@ -74,7 +81,6 @@ class TimerController:UIViewController{
 		
 	}
 	private func setUpProgressRing(){
-		
 		
 		progressRing.backgroundColor = .white
 		progressRing.outerRingColor = myGray
@@ -122,7 +128,7 @@ class TimerController:UIViewController{
 	}
 	private func setUpLabels(){
 		timerLabel = UILabel(frame: CGRect(x: 140, y: 350, width: 200, height: 50))
-		timerLabel.text = "\(minutes ?? 25):00"
+		timerLabel.text = "\(pomoMin ?? 25):00"
 		timerLabel.font = UIFont(name: "SpoqaHanSans-Bold", size: 40)
 		completedPomoLabel = UILabel(frame: CGRect(x: 120, y: 160, width: 200, height: 50))
 		completedPomoLabel.font = UIFont(name: "Arial", size: 25)
@@ -140,29 +146,31 @@ class TimerController:UIViewController{
 		NSLog("isPomoTimerRunning = \(self.isPomoTimerRunning) before reset, at StartPomoTimer")
 		
 //		NSLog("progressRing.value = \(self.progressRing.currentValue) after reset, at StartPomoTimer")
-		
+		isReset = false
 		if isPomoTimerRunning == true {
-			// Start timer start
+			// Start timer
 			self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
 			// Start progressRing animation start
-			self.progressRing.startProgress(to: 25*60, duration: 10){
+			self.progressRing.startProgress(to: 25*60, duration: 25*60){
 				print("Done!!")
 				// When progress complete, set timer running false
 				
 				self.finishProgress()
 				self.isPomoTimerRunning = false
 	//			self.progressRing.resetProgress()
-				self.updateDonePomo()
 				
-				self.pauseBtn.isHidden = true
-				
-				// Show up alert
-				let alert = UIAlertController(title: "ppoggle completed", message: "Time to rest", preferredStyle: .alert)
-				alert.addAction(UIAlertAction(title: NSLocalizedString("확인", comment: "Default action"), style: .default, handler: { _ in
-					NSLog("The \"OK\" alert occured.")
-				}))
-				self.present(alert, animated: true, completion: nil)
-				
+				if !self.isReset{
+					self.updateDonePomo()
+					
+					self.pauseBtn.isHidden = true
+					
+					// Show up alert
+					let alert = UIAlertController(title: "ppoggle completed", message: "Time to rest", preferredStyle: .alert)
+					alert.addAction(UIAlertAction(title: NSLocalizedString("확인", comment: "Default action"), style: .default, handler: { _ in
+						NSLog("The \"OK\" alert occured.")
+					}))
+					self.present(alert, animated: true, completion: nil)
+				}
 			}
 		}
 	}
@@ -175,10 +183,10 @@ class TimerController:UIViewController{
 		
 		// When resetBtn is not clicked
 //		if isPomoTimerRunning == true {
-		
+			isReset = false
 			self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
 			NSLog("progressRing.value = \(self.progressRing.currentValue) after reset, at StartBreakTimer")
-			self.progressRing.startProgress(to: 5*60, duration: 10){
+			self.progressRing.startProgress(to: 5*60, duration: 5*60){
 				print("Done!!")
 				// When progress complete, set timer running false
 				
@@ -207,24 +215,27 @@ class TimerController:UIViewController{
 		if seconds == 0 {
 			minutes -= 1
 			// 60으로 해야함. 테스트로 5초까지만 설정.
-			seconds = 9
+			seconds = 59
 		} else {
 			seconds -= 1
 		}
 		// TimerLabel text update every seconds
-		self.timerLabel.text = "\(minutes):\(String(format: "%02d", seconds))"
+		self.timerLabel.text = "\(String(format: "%02d", minutes)):\(String(format: "%02d", seconds))"
 	}
 	func finishProgress(){
-		self.minutes = 25
-		self.seconds = 0
+		
 		
 		// When progress finish, check isPomoTimerRunning and start timer
 		self.timer.invalidate()
 		if isPomoTimerRunning {
+			self.minutes = 5
+			self.seconds = 0
 			self.progressRing.startProgress(to: 0, duration: 0,completion: {
 				self.startBreakTimer()
 			})
 		} else {
+			self.minutes = 25
+			self.seconds = 0
 			self.progressRing.startProgress(to: 0, duration: 0,completion: {
 				self.startPomoTimer()
 			})
@@ -239,6 +250,7 @@ class TimerController:UIViewController{
 		self.isPomoTimerRunning = true
 		startBtn.isHidden = true
 		pauseBtn.isHidden = false
+		
 		startPomoTimer()
 		
 	}
@@ -267,10 +279,13 @@ class TimerController:UIViewController{
 		self.progressRing.startProgress(to: 0, duration: 0,completion: {
 			self.progressRing.resetProgress()
 			
+			self.timerLabel.text = "\(self.pomoMin ?? 25):00"
+			self.startBtn.isHidden = false
+			self.pauseBtn.isHidden = true
+			self.isReset = true
 			// Timer invalidate
 			self.timer.invalidate()
+			
 		})
-		
 	}
-	
 }

@@ -58,12 +58,12 @@ class TimerController:UIViewController{
 		setUpLabels()
 		
 		// Print all fonts on project
-//		UIFont.familyNames.forEach {
-//			print($0)
-//			UIFont.fontNames(forFamilyName: $0).forEach {
-//				print("  \($0)")
-//			}
-//		}
+		UIFont.familyNames.forEach {
+			print($0)
+			UIFont.fontNames(forFamilyName: $0).forEach {
+				print("  \($0)")
+			}
+		}
 		
 	}
 	override func viewWillDisappear(_ animated: Bool) {

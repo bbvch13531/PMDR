@@ -85,7 +85,8 @@ class SettingController: UIViewController, UITableViewDelegate, UITableViewDataS
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //		let row = self.list[indexPath.row]
 		
-		let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell", for: indexPath)
+		
+		let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell", for: indexPath) as! SettingCustomCell
 //		cell.settingName = "test"
 //
 //		var sbtn = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 40))

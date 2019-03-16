@@ -3,7 +3,7 @@ target 'ppoggle' do
     use_frameworks!
 
     pod 'UICircularProgressRing'
-    pod 'Alamofire'
+    pod 'Alamofire', '~> 5.0.0-beta.3'
 end
 
 post_install do |installer|

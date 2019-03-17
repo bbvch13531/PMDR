@@ -34,25 +34,24 @@ class SettingController: UIViewController, UITableViewDelegate, UITableViewDataS
 		super.viewWillAppear(animated)
 		
 		
-		tableView.frame = CGRect(x: 0, y: 50, width: screenWidth, height: screenHeight)
-		tableView.delegate = self
-		tableView.dataSource = self
-//		tableView.style =
-		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "settingCell")
-		
-		self.view.addSubview(tableView)
 		
 		// 이 부분 코드 리팩토링해야함. Nav bar 과 tableView 같이 쓰는 더 나은 방법 찾아보자.
 		let footerView = UIView(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 10))
 		let headerView = UIView(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 1))
-//		footerView.backgroundColor = UIColor.green
+
 		tableView.tableFooterView = footerView
 		tableView.tableHeaderView = headerView
 	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		tableView.frame = CGRect(x: 0, y: 50, width: screenWidth, height: screenHeight)
+		tableView.delegate = self
+		tableView.dataSource = self
+		//		tableView.style =
+		tableView.register(SettingCustomCell.self, forCellReuseIdentifier: "settingCustomCell")
 		
+		self.view.addSubview(tableView)
 		
 		// NavigationBar의 size 는 항상 고정. Safe area 부터 적용해야함.
 		navBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: screenWidth, height: 0))
@@ -81,12 +80,22 @@ class SettingController: UIViewController, UITableViewDelegate, UITableViewDataS
 	}
 	
 	
-	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //		let row = self.list[indexPath.row]
 		
+		var customCell = SettingCustomCell()
+		var rowList = self.sectionList[indexPath.section]
+		print("rowList[0] = \(rowList[0]), section = \(indexPath.section), row = \(indexPath.row)")
 		
-		let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell", for: indexPath) as! SettingCustomCell
+		if let cell = tableView.dequeueReusableCell(withIdentifier: "settingCustomCell", for: indexPath) as? SettingCustomCell {
+			customCell = cell
+			customCell.textLabel!.text = rowList[indexPath.row]
+			
+			return customCell
+		} else {
+			print("Cannot casting to SettingCustomCell")
+		}
+//		let cell = tableView.dequeueReusableCell(withIdentifier: "settingCustomCell", for: indexPath) as! SettingCustomCell
 //		cell.settingName = "test"
 //
 //		var sbtn = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
@@ -95,11 +104,7 @@ class SettingController: UIViewController, UITableViewDelegate, UITableViewDataS
 //		cell.settingBtn = sbtn
 //		NSLog("indexPath.row = %d, cell.name = %s",indexPath.row, cell.settingName)
 		
-		var rowList = self.sectionList[indexPath.section]
-		print("rowList[0] = \(rowList[0]), section = \(indexPath.section), row = \(indexPath.row)")
-		cell.textLabel!.text = rowList[indexPath.row]
-		
-		return cell
+		return customCell
 	}
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return 50

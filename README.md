@@ -44,12 +44,6 @@
 Pomodoro method is one of time-management methods. By repeating focus on for 25 minutes and take a break for 5 minutes, increase concentration time. ppoggle is after its name to pomodoro so that make its sound to "뽀글".
 ppoggle's main feature is ppoggle user group that sharing one's poggle count(concentration hours). By sharing ppoggle count, user would motivated so that they could be more productive.
 
-## How to use
-
-<img src="https://github.com/bbvch13531/ppoggle/blob/master/images/app_store.png" width="150px">
-</br>
-ppoggle is about to download on the App store soon.
-
 ## License
 ppoggle is licensed under the [GNU GENERAL PUBLIC LICENSE v3](https://github.com/bbvch13531/ppoggle/blob/master/LICENSE).
 ```

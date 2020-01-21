@@ -10,36 +10,6 @@
 </div>
 </br></br>
 
-<div align="middle">
-    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/main_scene.png" width="300px">
-    <p>Main screen</p>
-</div>
-</br></br>
-
-<div align="middle">
-    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/timer.png" width="300px">
-    <p>Timer menu</p>
-</div>
-</br></br>
-
-<div align="middle">
-    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/report_today.png" width="300px">
-    <p>Report menu - today (todo)</p> 
-</div>
-</br></br>
-
-<div align="middle">
-    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/report_thisweek.png" width="300px">
-    <p>Report menu - this week (todo)</p>  
-</div>
-</br></br>
-
-<div align="middle">
-    <img src="https://github.com/bbvch13531/ppoggle/blob/master/images/user_group.png" width="300px">
-    <p>Group menu (todo)</p>
-</div>
-</br></br>
-
 ## Features
 Pomodoro method is one of time-management methods. By repeating focus on for 25 minutes and take a break for 5 minutes, increase concentration time. ppoggle is after its name to pomodoro so that make its sound to "뽀글".
 ppoggle's main feature is ppoggle user group that sharing one's poggle count(concentration hours). By sharing ppoggle count, user would motivated so that they could be more productive.

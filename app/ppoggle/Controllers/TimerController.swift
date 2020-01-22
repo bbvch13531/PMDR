@@ -9,28 +9,66 @@
 import Foundation
 import UIKit
 import UICircularProgressRing
+import Then
 
 class TimerController: UIViewController {
 	
-	// frame to make progressRing
-	var frame : CGRect {
-		get {
-			return CGRect(x: 45, y: 230, width: 300, height: 300)
-		}
-	}
 	
 	// Using lazy var
-	lazy var progressRing = UICircularProgressRing(frame: frame)
+    var progressRing = UICircularProgressRing().then {
+        $0.frame = CGRect(x: 45, y: 230, width: 300, height: 300)
+        $0.backgroundColor = .white
+        $0.outerRingColor = PGColors.gray
+        $0.outerRingWidth = 25
+        $0.startAngle = 270
+        $0.innerRingWidth = 25
+        $0.ringStyle = .ontop
+        $0.shouldShowValueText = false
+        $0.animationStyle = CAMediaTimingFunctionName.linear.rawValue
+        $0.font = UIFont.boldSystemFont(ofSize: 40)
+    }
+    
 	// Pomo timer
 	var timer = Timer()
 	
-  var timerState = TimerState.initialized
+    var timerState = TimerState.initialized
   
-	var startBtn: UIButton!
-	var pauseBtn: UIButton!
-	var resetBtn: UIButton!
-	var completedPomoLabel: UILabel!
-	var timerLabel: UILabel!
+    var startBtn = UIButton().then {
+        $0.frame = CGRect(x: 40, y: 550, width: 150, height: 70)
+        $0.setTitle("start", for: .normal)
+        $0.backgroundColor = PGColors.red
+        $0.layer.cornerRadius = 15
+        $0.titleLabel?.font = PGFonts.buttonTitle
+    }
+    
+    var pauseBtn = UIButton().then {
+        $0.frame = CGRect(x: 40, y: 550, width: 150, height: 70)
+        $0.setTitle("pause", for: .normal)
+        $0.backgroundColor = PGColors.red
+        $0.layer.cornerRadius = 15
+        $0.titleLabel?.font = PGFonts.buttonTitle
+        $0.isHidden = true
+    }
+    
+    var resetBtn = UIButton().then {
+        $0.frame = CGRect(x: 200, y: 550, width: 150, height: 70)
+        $0.setTitle("reset", for: .normal)
+        $0.backgroundColor = PGColors.red
+        $0.layer.cornerRadius = 15
+        $0.titleLabel?.font = PGFonts.buttonTitle
+    }
+    
+    var completedPomoLabel = UILabel().then {
+        $0.frame = CGRect(x: 120, y: 160, width: 200, height: 50)
+        $0.font = PGFonts.labelTitle
+        $0.text = "Today : 0 / 20"
+    }
+    
+    var timerLabel = UILabel().then {
+        $0.frame = CGRect(x: 140, y: 350, width: 200, height: 50)
+        $0.text = "00:00"
+        $0.font = PGFonts.buttonTitle
+    }
 	
 	// State of current timer
 	var minutes: Int = 25
@@ -43,20 +81,25 @@ class TimerController: UIViewController {
 	var targetPomo: Int = 20
 	var donePomo: Int = 0
 	
-	let myRed = UIColor(red:1.00, green:0.33, blue:0.31, alpha:1.0)
-	let myGray = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
-	let myYellow = UIColor(red:1.00, green:0.77, blue:0.38, alpha:1.0)
-	
 	var isPomoTimerRunning = false
 	var isReset = false
 	
 	override func viewDidLoad() {
 		// Set up UI
 
-		setUpProgressRing()
-		setUpBtns()
-		setUpLabels()
-    
+        self.view.addSubview(startBtn)
+        self.view.addSubview(pauseBtn)
+        self.view.addSubview(resetBtn)
+        
+        startBtn.addTarget(self, action: #selector(self.startBtnClick), for: .touchDown)
+        pauseBtn.addTarget(self, action: #selector(self.pauseBtnClick), for: .touchDown)
+        resetBtn.addTarget(self, action: #selector(self.resetBtnClick), for: .touchDown)
+        
+        self.view.addSubview(timerLabel)
+        self.view.addSubview(completedPomoLabel)
+        
+        self.view.addSubview(progressRing)
+        
 //    Check installed font
 //    checkFont()
 
@@ -75,73 +118,14 @@ class TimerController: UIViewController {
 		
 	}
   
-	private func setUpProgressRing() {
-		
-		progressRing.backgroundColor = .white
-		progressRing.outerRingColor = myGray
-		
-		progressRing.outerRingWidth = 25
-		
-		progressRing.startAngle = 270
-		progressRing.innerRingWidth = 25
-		progressRing.ringStyle = .ontop
-		progressRing.shouldShowValueText = false
-		
-		progressRing.animationStyle = CAMediaTimingFunctionName.linear.rawValue
-		
-		progressRing.font = UIFont.boldSystemFont(ofSize: 40)
-
-		self.view.addSubview(progressRing)
-	}
-  
-	private func setUpBtns() {
-		self.startBtn = UIButton(frame: CGRect(x: 40, y: 550, width: 150, height: 70))
-		startBtn.setTitle("start", for: .normal)
-		startBtn.backgroundColor = myRed
-		startBtn.layer.cornerRadius = 15
-		startBtn.titleLabel?.font = UIFont(name: "SpoqaHanSans-Bold", size: 40)
-		
-		self.pauseBtn = UIButton(frame: CGRect(x: 40, y: 550, width: 150, height: 70))
-		pauseBtn.setTitle("pause", for: .normal)
-		pauseBtn.backgroundColor = myRed
-		pauseBtn.layer.cornerRadius = 15
-		pauseBtn.titleLabel?.font = UIFont(name: "SpoqaHanSans-Bold", size: 40)
-		pauseBtn.isHidden = true
-		
-		self.resetBtn = UIButton(frame: CGRect(x: 200, y: 550, width: 150, height: 70))
-		resetBtn.setTitle("reset", for: .normal)
-		resetBtn.backgroundColor = myRed
-		resetBtn.layer.cornerRadius = 15
-		resetBtn.titleLabel?.font = UIFont(name: "SpoqaHanSans-Bold", size: 40)
-		
-		self.view.addSubview(startBtn)
-		self.view.addSubview(pauseBtn)
-		self.view.addSubview(resetBtn)
-		startBtn.addTarget(self, action: #selector(self.startBtnClick), for: .touchDown)
-		pauseBtn.addTarget(self, action: #selector(self.pauseBtnClick), for: .touchDown)
-		resetBtn.addTarget(self, action: #selector(self.resetBtnClick), for: .touchDown)
-	}
-  
-	private func setUpLabels() {
-		timerLabel = UILabel(frame: CGRect(x: 140, y: 350, width: 200, height: 50))
-		timerLabel.text = "\(pomoMin):00"
-		timerLabel.font = UIFont(name: "SpoqaHanSans-Bold", size: 40)
-		completedPomoLabel = UILabel(frame: CGRect(x: 120, y: 160, width: 200, height: 50))
-		completedPomoLabel.font = UIFont(name: "Arial", size: 25)
-		completedPomoLabel.text = "Today : \(donePomo) / \(targetPomo)"
-		
-		self.view.addSubview(timerLabel)
-		self.view.addSubview(completedPomoLabel)
-	}
-	
 	// MARK: Start trigger PomoTimer.
 	func startPomoTimer() {
-		self.progressRing.innerRingColor = self.myRed
+        self.progressRing.innerRingColor = PGColors.red
 		self.progressRing.maxValue = 25*60
     
 		NSLog("isPomoTimerRunning = \(self.isPomoTimerRunning) before reset, at StartPomoTimer")
 		
-		NSLog("progressRing.value = \(self.progressRing.currentValue) after reset, at StartPomoTimer")
+        NSLog("progressRing.value = \(String(describing: self.progressRing.currentValue)) after reset, at StartPomoTimer")
     switch timerState {
     case .paused:
       resumePomoTimer()
@@ -182,7 +166,7 @@ class TimerController: UIViewController {
 	}
   
   func resumePomoTimer() {
-    self.progressRing.innerRingColor = self.myRed
+    self.progressRing.innerRingColor = PGColors.red
     self.progressRing.maxValue = 25*60
     
     isReset = false
@@ -197,7 +181,7 @@ class TimerController: UIViewController {
   
 	func startBreakTimer() {
 		
-		self.progressRing.innerRingColor = self.myYellow
+		self.progressRing.innerRingColor = PGColors.yellow
 		self.progressRing.maxValue = 5*60
 		self.progressRing.value = 0
 		NSLog("isPomoTimerRunning = \(self.isPomoTimerRunning) before reset, at StartBreakTimer")

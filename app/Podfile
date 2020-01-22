@@ -1,10 +1,12 @@
+platform :ios, '12.1'
 target 'ppoggle' do
     # IMPORTANT: Make sure use_frameworks! is included at the top of the file
-    use_frameworks!
 
     pod 'UICircularProgressRing'
     pod 'Alamofire', '~> 5.0.0-beta.3'
 	pod 'SwiftLint'
+	pod 'Then', '2.6.0'
+	pod 'SnapKit', '4.2.0'
 end
 
 post_install do |installer|

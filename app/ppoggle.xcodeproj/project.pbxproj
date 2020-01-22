@@ -3,31 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C5BEB1A9537AC31FF56B330 /* Pods_ppoggle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CF2F8719C02A51FB269CC2 /* Pods_ppoggle.framework */; };
 		9F0541CA21D3D95F000B8933 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0541C921D3D95F000B8933 /* TimerController.swift */; };
 		9F0541CC21D3D96C000B8933 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0541CB21D3D96C000B8933 /* SettingController.swift */; };
 		9F0541CE21D3DEC2000B8933 /* PGTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0541CD21D3DEC2000B8933 /* PGTabBarController.swift */; };
-		9F29320B23CDE0DE00348D5D /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F29320A23CDE0DE00348D5D /* Utility.swift */; };
-		9F522751223CE40000496071 /* Spoqa-Han-Sans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F52274D223CE40000496071 /* Spoqa-Han-Sans-Regular.ttf */; };
-		9F522752223CE40000496071 /* Spoqa-Han-Sans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F52274E223CE40000496071 /* Spoqa-Han-Sans-Bold.ttf */; };
-		9F522753223CE40000496071 /* Spoqa-Han-Sans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F52274F223CE40000496071 /* Spoqa-Han-Sans-Light.ttf */; };
-		9F522754223CE40000496071 /* Spoqa-Han-Sans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F522750223CE40000496071 /* Spoqa-Han-Sans-Thin.ttf */; };
+		9F6A157F23D8570300B13C4A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6A157E23D8570300B13C4A /* Utility.swift */; };
 		9F7F4FBC21DCB52F00BD9C8B /* SettingCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F4FBB21DCB52F00BD9C8B /* SettingCustomCell.swift */; };
 		9F7F4FBE21DCD61500BD9C8B /* SettingVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F4FBD21DCD61500BD9C8B /* SettingVO.swift */; };
 		9FC8581321B6CE3B00BA05CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC8581221B6CE3B00BA05CA /* AppDelegate.swift */; };
 		9FC8581521B6CE3B00BA05CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC8581421B6CE3B00BA05CA /* ViewController.swift */; };
 		9FC8581821B6CE3B00BA05CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC8581621B6CE3B00BA05CA /* Main.storyboard */; };
-		9FC8581B21B6CE3B00BA05CA /* ppoggle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9FC8581921B6CE3B00BA05CA /* ppoggle.xcdatamodeld */; };
 		9FC8582021B6CE3C00BA05CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC8581E21B6CE3C00BA05CA /* LaunchScreen.storyboard */; };
 		9FC8582B21B6CE3C00BA05CA /* ppoggleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC8582A21B6CE3C00BA05CA /* ppoggleTests.swift */; };
 		9FE1496C21D78559005E8D1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FE1496B21D78559005E8D1F /* Assets.xcassets */; };
 		9FE1496E21D89C37005E8D1F /* ReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1496D21D89C37005E8D1F /* ReportController.swift */; };
 		9FE1497021D89C52005E8D1F /* UserGroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1496F21D89C52005E8D1F /* UserGroupController.swift */; };
 		9FE1497221D89C67005E8D1F /* MypomoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1497121D89C67005E8D1F /* MypomoController.swift */; };
+		F0A586C2CE480C6F624A540D /* libPods-ppoggle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 112E06484D66E9A17FF5BA62 /* libPods-ppoggle.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,23 +36,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		112E06484D66E9A17FF5BA62 /* libPods-ppoggle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ppoggle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D058A1BC3F9D4E16351EEA5 /* Pods-ppoggle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ppoggle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ppoggle/Pods-ppoggle.debug.xcconfig"; sourceTree = "<group>"; };
-		83CF2F8719C02A51FB269CC2 /* Pods_ppoggle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ppoggle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F0541C921D3D95F000B8933 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		9F0541CB21D3D96C000B8933 /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		9F0541CD21D3DEC2000B8933 /* PGTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGTabBarController.swift; sourceTree = "<group>"; };
-		9F29320A23CDE0DE00348D5D /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		9F52274D223CE40000496071 /* Spoqa-Han-Sans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Spoqa-Han-Sans-Regular.ttf"; path = "../../../../../Library/Fonts/Spoqa-Han-Sans-Regular.ttf"; sourceTree = "<group>"; };
-		9F52274E223CE40000496071 /* Spoqa-Han-Sans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Spoqa-Han-Sans-Bold.ttf"; path = "../../../../../Library/Fonts/Spoqa-Han-Sans-Bold.ttf"; sourceTree = "<group>"; };
-		9F52274F223CE40000496071 /* Spoqa-Han-Sans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Spoqa-Han-Sans-Light.ttf"; path = "../../../../../Library/Fonts/Spoqa-Han-Sans-Light.ttf"; sourceTree = "<group>"; };
-		9F522750223CE40000496071 /* Spoqa-Han-Sans-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Spoqa-Han-Sans-Thin.ttf"; path = "../../../../../Library/Fonts/Spoqa-Han-Sans-Thin.ttf"; sourceTree = "<group>"; };
+		9F6A157923D8556500B13C4A /* Spoqa-Han-Sans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Spoqa-Han-Sans-Regular.ttf"; path = "../../../../../../../../Library/Fonts/Spoqa-Han-Sans-Regular.ttf"; sourceTree = "<group>"; };
+		9F6A157A23D8556500B13C4A /* Spoqa-Han-Sans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Spoqa-Han-Sans-Bold.ttf"; path = "../../../../../../../../Library/Fonts/Spoqa-Han-Sans-Bold.ttf"; sourceTree = "<group>"; };
+		9F6A157B23D8556500B13C4A /* Spoqa-Han-Sans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Spoqa-Han-Sans-Light.ttf"; path = "../../../../../../../../Library/Fonts/Spoqa-Han-Sans-Light.ttf"; sourceTree = "<group>"; };
+		9F6A157C23D8556500B13C4A /* Spoqa-Han-Sans-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Spoqa-Han-Sans-Thin.ttf"; path = "../../../../../../../../Library/Fonts/Spoqa-Han-Sans-Thin.ttf"; sourceTree = "<group>"; };
+		9F6A157E23D8570300B13C4A /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		9F7F4FBB21DCB52F00BD9C8B /* SettingCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCustomCell.swift; sourceTree = "<group>"; };
 		9F7F4FBD21DCD61500BD9C8B /* SettingVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVO.swift; sourceTree = "<group>"; };
 		9FC8580F21B6CE3B00BA05CA /* ppoggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ppoggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC8581221B6CE3B00BA05CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FC8581421B6CE3B00BA05CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9FC8581721B6CE3B00BA05CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9FC8581A21B6CE3B00BA05CA /* ppoggle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ppoggle.xcdatamodel; sourceTree = "<group>"; };
 		9FC8581F21B6CE3C00BA05CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FC8582121B6CE3C00BA05CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FC8582621B6CE3C00BA05CA /* ppoggleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ppoggleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C5BEB1A9537AC31FF56B330 /* Pods_ppoggle.framework in Frameworks */,
+				F0A586C2CE480C6F624A540D /* libPods-ppoggle.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,15 +95,29 @@
 		1C33195C552B43C1C56BC85C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				83CF2F8719C02A51FB269CC2 /* Pods_ppoggle.framework */,
+				112E06484D66E9A17FF5BA62 /* libPods-ppoggle.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F6A157823D8556100B13C4A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9F6A157A23D8556500B13C4A /* Spoqa-Han-Sans-Bold.ttf */,
+				9F6A157B23D8556500B13C4A /* Spoqa-Han-Sans-Light.ttf */,
+				9F6A157923D8556500B13C4A /* Spoqa-Han-Sans-Regular.ttf */,
+				9F6A157C23D8556500B13C4A /* Spoqa-Han-Sans-Thin.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		9FC8580621B6CE3B00BA05CA = {
 			isa = PBXGroup;
 			children = (
 				9FC8581121B6CE3B00BA05CA /* ppoggle */,
+				9FC8582121B6CE3C00BA05CA /* Info.plist */,
+				9FC8581421B6CE3B00BA05CA /* ViewController.swift */,
+				9FC8581221B6CE3B00BA05CA /* AppDelegate.swift */,
 				9FC8582921B6CE3C00BA05CA /* ppoggleTests */,
 				9FC8581021B6CE3B00BA05CA /* Products */,
 				12297B0CA28141D14FA51477 /* Pods */,
@@ -130,14 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				9FE1497321D8D014005E8D1F /* Resources */,
-				9FC8581621B6CE3B00BA05CA /* Main.storyboard */,
-				9FC8582121B6CE3C00BA05CA /* Info.plist */,
-				9FC8581921B6CE3B00BA05CA /* ppoggle.xcdatamodeld */,
-				9FC8581E21B6CE3C00BA05CA /* LaunchScreen.storyboard */,
-				9FE1496B21D78559005E8D1F /* Assets.xcassets */,
-				9FC8581421B6CE3B00BA05CA /* ViewController.swift */,
-				9FC8581221B6CE3B00BA05CA /* AppDelegate.swift */,
 				9FC8ED1F21FBFA8A0005D124 /* Controllers */,
+				9F6A157E23D8570300B13C4A /* Utility.swift */,
 				9FC8ED2021FBFAF00005D124 /* Views */,
 				9FC8ED2121FBFAF70005D124 /* Models */,
 			);
@@ -158,7 +160,6 @@
 			children = (
 				9FE1497121D89C67005E8D1F /* MypomoController.swift */,
 				9F0541C921D3D95F000B8933 /* TimerController.swift */,
-				9F29320A23CDE0DE00348D5D /* Utility.swift */,
 				9FE1496D21D89C37005E8D1F /* ReportController.swift */,
 				9FE1496F21D89C52005E8D1F /* UserGroupController.swift */,
 				9F0541CD21D3DEC2000B8933 /* PGTabBarController.swift */,
@@ -186,10 +187,10 @@
 		9FE1497321D8D014005E8D1F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9F52274E223CE40000496071 /* Spoqa-Han-Sans-Bold.ttf */,
-				9F52274F223CE40000496071 /* Spoqa-Han-Sans-Light.ttf */,
-				9F52274D223CE40000496071 /* Spoqa-Han-Sans-Regular.ttf */,
-				9F522750223CE40000496071 /* Spoqa-Han-Sans-Thin.ttf */,
+				9F6A157823D8556100B13C4A /* Fonts */,
+				9FC8581621B6CE3B00BA05CA /* Main.storyboard */,
+				9FC8581E21B6CE3C00BA05CA /* LaunchScreen.storyboard */,
+				9FE1496B21D78559005E8D1F /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -205,7 +206,6 @@
 				9FC8580B21B6CE3B00BA05CA /* Sources */,
 				9FC8580C21B6CE3B00BA05CA /* Frameworks */,
 				9FC8580D21B6CE3B00BA05CA /* Resources */,
-				85FDA86E71A749D5EB390A28 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -277,11 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F522751223CE40000496071 /* Spoqa-Han-Sans-Regular.ttf in Resources */,
 				9FC8582021B6CE3C00BA05CA /* LaunchScreen.storyboard in Resources */,
-				9F522754223CE40000496071 /* Spoqa-Han-Sans-Thin.ttf in Resources */,
-				9F522753223CE40000496071 /* Spoqa-Han-Sans-Light.ttf in Resources */,
-				9F522752223CE40000496071 /* Spoqa-Han-Sans-Bold.ttf in Resources */,
 				9FE1496C21D78559005E8D1F /* Assets.xcassets in Resources */,
 				9FC8581821B6CE3B00BA05CA /* Main.storyboard in Resources */,
 			);
@@ -315,23 +311,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		85FDA86E71A749D5EB390A28 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ppoggle/Pods-ppoggle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ppoggle/Pods-ppoggle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ppoggle/Pods-ppoggle-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -346,10 +325,9 @@
 				9F0541CE21D3DEC2000B8933 /* PGTabBarController.swift in Sources */,
 				9F7F4FBC21DCB52F00BD9C8B /* SettingCustomCell.swift in Sources */,
 				9FE1497221D89C67005E8D1F /* MypomoController.swift in Sources */,
+				9F6A157F23D8570300B13C4A /* Utility.swift in Sources */,
 				9FE1497021D89C52005E8D1F /* UserGroupController.swift in Sources */,
-				9F29320B23CDE0DE00348D5D /* Utility.swift in Sources */,
 				9F0541CA21D3D95F000B8933 /* TimerController.swift in Sources */,
-				9FC8581B21B6CE3B00BA05CA /* ppoggle.xcdatamodeld in Sources */,
 				9FC8581321B6CE3B00BA05CA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,7 +495,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ZMC86H7GX;
-				INFOPLIST_FILE = ppoggle/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -536,7 +514,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ZMC86H7GX;
-				INFOPLIST_FILE = ppoggle/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -621,19 +599,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		9FC8581921B6CE3B00BA05CA /* ppoggle.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9FC8581A21B6CE3B00BA05CA /* ppoggle.xcdatamodel */,
-			);
-			currentVersion = 9FC8581A21B6CE3B00BA05CA /* ppoggle.xcdatamodel */;
-			path = ppoggle.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 9FC8580721B6CE3B00BA05CA /* Project object */;
 }

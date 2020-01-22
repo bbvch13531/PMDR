@@ -11,6 +11,10 @@
 		9F0541CC21D3D96C000B8933 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0541CB21D3D96C000B8933 /* SettingController.swift */; };
 		9F0541CE21D3DEC2000B8933 /* PGTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0541CD21D3DEC2000B8933 /* PGTabBarController.swift */; };
 		9F6A157F23D8570300B13C4A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6A157E23D8570300B13C4A /* Utility.swift */; };
+		9F6A158C23D85D7700B13C4A /* Spoqa Han Sans Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F6A158823D85D7700B13C4A /* Spoqa Han Sans Light.ttf */; };
+		9F6A158D23D85D7700B13C4A /* Spoqa Han Sans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F6A158923D85D7700B13C4A /* Spoqa Han Sans Regular.ttf */; };
+		9F6A158E23D85D7700B13C4A /* Spoqa Han Sans Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F6A158A23D85D7700B13C4A /* Spoqa Han Sans Thin.ttf */; };
+		9F6A158F23D85D7700B13C4A /* Spoqa Han Sans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F6A158B23D85D7700B13C4A /* Spoqa Han Sans Bold.ttf */; };
 		9F7F4FBC21DCB52F00BD9C8B /* SettingCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F4FBB21DCB52F00BD9C8B /* SettingCustomCell.swift */; };
 		9F7F4FBE21DCD61500BD9C8B /* SettingVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F4FBD21DCD61500BD9C8B /* SettingVO.swift */; };
 		9FC8581321B6CE3B00BA05CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC8581221B6CE3B00BA05CA /* AppDelegate.swift */; };
@@ -41,11 +45,11 @@
 		9F0541C921D3D95F000B8933 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		9F0541CB21D3D96C000B8933 /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		9F0541CD21D3DEC2000B8933 /* PGTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGTabBarController.swift; sourceTree = "<group>"; };
-		9F6A157923D8556500B13C4A /* Spoqa-Han-Sans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Spoqa-Han-Sans-Regular.ttf"; path = "../../../../../../../../Library/Fonts/Spoqa-Han-Sans-Regular.ttf"; sourceTree = "<group>"; };
-		9F6A157A23D8556500B13C4A /* Spoqa-Han-Sans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Spoqa-Han-Sans-Bold.ttf"; path = "../../../../../../../../Library/Fonts/Spoqa-Han-Sans-Bold.ttf"; sourceTree = "<group>"; };
-		9F6A157B23D8556500B13C4A /* Spoqa-Han-Sans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Spoqa-Han-Sans-Light.ttf"; path = "../../../../../../../../Library/Fonts/Spoqa-Han-Sans-Light.ttf"; sourceTree = "<group>"; };
-		9F6A157C23D8556500B13C4A /* Spoqa-Han-Sans-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Spoqa-Han-Sans-Thin.ttf"; path = "../../../../../../../../Library/Fonts/Spoqa-Han-Sans-Thin.ttf"; sourceTree = "<group>"; };
 		9F6A157E23D8570300B13C4A /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		9F6A158823D85D7700B13C4A /* Spoqa Han Sans Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Light.ttf"; sourceTree = "<group>"; };
+		9F6A158923D85D7700B13C4A /* Spoqa Han Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Regular.ttf"; sourceTree = "<group>"; };
+		9F6A158A23D85D7700B13C4A /* Spoqa Han Sans Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Thin.ttf"; sourceTree = "<group>"; };
+		9F6A158B23D85D7700B13C4A /* Spoqa Han Sans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Bold.ttf"; sourceTree = "<group>"; };
 		9F7F4FBB21DCB52F00BD9C8B /* SettingCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCustomCell.swift; sourceTree = "<group>"; };
 		9F7F4FBD21DCD61500BD9C8B /* SettingVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVO.swift; sourceTree = "<group>"; };
 		9FC8580F21B6CE3B00BA05CA /* ppoggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ppoggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,10 +107,10 @@
 		9F6A157823D8556100B13C4A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				9F6A157A23D8556500B13C4A /* Spoqa-Han-Sans-Bold.ttf */,
-				9F6A157B23D8556500B13C4A /* Spoqa-Han-Sans-Light.ttf */,
-				9F6A157923D8556500B13C4A /* Spoqa-Han-Sans-Regular.ttf */,
-				9F6A157C23D8556500B13C4A /* Spoqa-Han-Sans-Thin.ttf */,
+				9F6A158B23D85D7700B13C4A /* Spoqa Han Sans Bold.ttf */,
+				9F6A158823D85D7700B13C4A /* Spoqa Han Sans Light.ttf */,
+				9F6A158923D85D7700B13C4A /* Spoqa Han Sans Regular.ttf */,
+				9F6A158A23D85D7700B13C4A /* Spoqa Han Sans Thin.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -277,9 +281,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F6A158C23D85D7700B13C4A /* Spoqa Han Sans Light.ttf in Resources */,
 				9FC8582021B6CE3C00BA05CA /* LaunchScreen.storyboard in Resources */,
+				9F6A158D23D85D7700B13C4A /* Spoqa Han Sans Regular.ttf in Resources */,
 				9FE1496C21D78559005E8D1F /* Assets.xcassets in Resources */,
+				9F6A158E23D85D7700B13C4A /* Spoqa Han Sans Thin.ttf in Resources */,
 				9FC8581821B6CE3B00BA05CA /* Main.storyboard in Resources */,
+				9F6A158F23D85D7700B13C4A /* Spoqa Han Sans Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

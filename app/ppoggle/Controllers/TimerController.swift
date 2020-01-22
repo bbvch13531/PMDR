@@ -66,10 +66,11 @@ class TimerController: UIViewController {
     
     var timerLabel = UILabel().then {
         $0.frame = CGRect(x: 140, y: 350, width: 200, height: 50)
-        $0.text = "00:00"
         $0.font = PGFonts.buttonTitle
+        $0.text = "00:00"
+        $0.textColor = .black
     }
-	
+
 	// State of current timer
 	var minutes: Int = 25
 	var seconds: Int = 0
@@ -91,17 +92,18 @@ class TimerController: UIViewController {
         self.view.addSubview(pauseBtn)
         self.view.addSubview(resetBtn)
         
+        startBtn.titleLabel?.font = PGFonts.buttonTitle
         startBtn.addTarget(self, action: #selector(self.startBtnClick), for: .touchDown)
         pauseBtn.addTarget(self, action: #selector(self.pauseBtnClick), for: .touchDown)
         resetBtn.addTarget(self, action: #selector(self.resetBtnClick), for: .touchDown)
         
+        self.view.addSubview(progressRing)
         self.view.addSubview(timerLabel)
         self.view.addSubview(completedPomoLabel)
         
-        self.view.addSubview(progressRing)
         
 //    Check installed font
-//    checkFont()
+//        checkFont()
 
 	}
   
@@ -228,6 +230,7 @@ class TimerController: UIViewController {
 		}
 		// TimerLabel text update every seconds
 		self.timerLabel.text = "\(String(format: "%02d", minutes)):\(String(format: "%02d", seconds))"
+        print(self.timerLabel.text)
 	}
   
 	func finishProgress() {

@@ -10,9 +10,7 @@ import Foundation
 import UIKit
 
 class SettingController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-//	required init?(coder aDecoder: NSCoder) {
-//		super.init(nibName: nil, bundle: nil)
-//	}
+
 	var tableView = UITableView()
 	var navBar = UINavigationBar()
 	
@@ -33,8 +31,6 @@ class SettingController: UIViewController, UITableViewDelegate, UITableViewDataS
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
-		
-		
 		// 이 부분 코드 리팩토링해야함. Nav bar 과 tableView 같이 쓰는 더 나은 방법 찾아보자.
 		let footerView = UIView(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 10))
 		let headerView = UIView(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 1))
@@ -48,7 +44,7 @@ class SettingController: UIViewController, UITableViewDelegate, UITableViewDataS
 		tableView.frame = CGRect(x: 0, y: 50, width: screenWidth, height: screenHeight)
 		tableView.delegate = self
 		tableView.dataSource = self
-		//		tableView.style =
+
 		tableView.register(SettingCustomCell.self, forCellReuseIdentifier: "settingCustomCell")
 		
 		self.view.addSubview(tableView)
@@ -64,19 +60,6 @@ class SettingController: UIViewController, UITableViewDelegate, UITableViewDataS
 		self.view.addSubview(navBar)
 		
 		self.setUpList()
-//		DispatchQueue.global().async{
-//			defer{
-//				DispatchQueue.main.async {
-//					self.tableView.reloadData()
-//				}
-//			}
-//			do{
-//				// 리스트 초기화
-//				self.setUpList()
-//			}catch{
-//				print(error.localizedDescription)
-//			}
-//		}
 	}
 	
 	
@@ -106,9 +89,11 @@ class SettingController: UIViewController, UITableViewDelegate, UITableViewDataS
 		
 		return customCell
 	}
-	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+	
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return 50
 	}
+  
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		let view = UIView(frame: CGRect.init(x: 0, y: 0, width: screenWidth, height: 60))
 		
@@ -138,6 +123,7 @@ class SettingController: UIViewController, UITableViewDelegate, UITableViewDataS
 		view.addSubview(label)
 		return view
 	}
+  
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if section == 0 {
 			return 1
@@ -151,23 +137,16 @@ class SettingController: UIViewController, UITableViewDelegate, UITableViewDataS
 			return 0
 		}
 	}
-	func numberOfSections(in tableView: UITableView) -> Int {
+	
+  func numberOfSections(in tableView: UITableView) -> Int {
 		return 4
 	}
-	func setUpList(){
-//		let section0 = ["프로필 수정"]
-//		let sectoin1 = ["알림"]
-//		let sectoin2 = ["서비스 약관","개인정보 처리방침"]
-//		let section3 = ["로그아웃","탈퇴하기"]
-//		titleArr = ["프로필 수정","알림","서비스 약관","개인정보 처리방침","로그아웃","탈퇴하기"]
-		
+  
+	func setUpList() {
 		self.sectionList.append(["프로필 수정"])
 		self.sectionList.append(["알림"])
 		self.sectionList.append(["서비스 약관","개인정보 처리방침"])
 		self.sectionList.append(["로그아웃","탈퇴하기"])
-//		for title in titleArr {
-//			self.list.append(title)
-//		}
-		
-	}
+
+  }
 }

@@ -8,35 +8,45 @@
 
 import Foundation
 import UIKit
+import Then
+import SnapKit
 
 class ReportController: UIViewController {
-  private var titleLabel: UILabel!
-  var horizontalLine_1: UIView!
-  var horizontalLine_2: UIView!
-  var horizontalLine_3: UIView!
+  private var titleLabel = UILabel().then {
+    $0.frame = CGRect(x:10, y:10, width:150, height:150)
+    $0.text = "리포트"
+    $0.textColor = .red
+    $0.textAlignment = .center
+  }
+  
+  private var todayLabel = UILabel().then {
+    $0.frame = CGRect(x:10, y:110, width:150, height:150)
+    $0.text = "오늘의 뽀글"
+    $0.textColor = .red
+    $0.textAlignment = .center
+  }
+  
+  var horizontalLine_1 =  UIView().then {
+    $0.frame = CGRect(x: 0, y: 100, width: 400, height: 1)
+    $0.layer.borderWidth = 1
+  }
+  
+  var horizontalLine_2 = UIView().then {
+    $0.frame = CGRect(x: 0, y: 200, width: 400, height: 1)
+    $0.layer.borderWidth = 1
+  }
+  
+  var horizontalLine_3 = UIView().then {
+    $0.frame = CGRect(x: 0, y: 300, width: 400, height: 1)
+    $0.layer.borderWidth = 1
+  }
   
 	override func viewDidLoad() {
-    setUpBtns()
-	}
-  
-  func setUpBtns() {
-    titleLabel = UILabel(frame: CGRect(x:10, y:10, width:150, height:150))
-    titleLabel.text = "리포트"
-    titleLabel.textColor = .red
-    titleLabel.textAlignment = .center
-    
-    horizontalLine_1 = UIView(frame: CGRect(x: 0, y: 100, width: 300, height: 1))
-    horizontalLine_2 = UIView(frame: CGRect(x: 0, y: 200, width: 300, height: 1))
-    horizontalLine_3 = UIView(frame: CGRect(x: 0, y: 300, width: 300, height: 1))
-    
-    horizontalLine_1.layer.borderWidth = 1
-    horizontalLine_2.layer.borderWidth = 1
-    horizontalLine_3.layer.borderWidth = 1
-    
     self.view.addSubview(horizontalLine_1)
     self.view.addSubview(horizontalLine_2)
     self.view.addSubview(horizontalLine_3)
     self.view.addSubview(titleLabel)
-  }
+    self.view.addSubview(todayLabel)
+	}
   
 }

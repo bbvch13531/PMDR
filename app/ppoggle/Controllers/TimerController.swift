@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import UICircularProgressRing
 import Then
+import SnapKit
 
 class TimerController: UIViewController {
 	
@@ -123,14 +124,11 @@ class TimerController: UIViewController {
 	// MARK: Start trigger PomoTimer.
 	func startPomoTimer() {
         self.progressRing.innerRingColor = PGColors.red
-		self.progressRing.maxValue = 25*60
+		self.progressRing.maxValue = 25 * 60
     
     #if DEBUG
 		NSLog("isPomoTimerRunning = \(self.isPomoTimerRunning) before reset, at StartPomoTimer")
-
-		
-        NSLog("progressRing.value = \(String(describing: self.progressRing.currentValue)) after reset, at StartPomoTimer")
-
+    NSLog("progressRing.value = \(String(describing: self.progressRing.currentValue)) after reset, at StartPomoTimer")
 		NSLog("progressRing.value = \(self.progressRing.currentValue) after reset, at StartPomoTimer")
     #endif
     
@@ -143,22 +141,27 @@ class TimerController: UIViewController {
       self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
             
             // Start progressRing animation start
-            self.progressRing.startProgress(to: 25*60, duration: 25*60) {
+            self.progressRing.startProgress(to: 25 * 60, duration: 25 * 60) {
+              [weak self] in guard let ss = self else { return }
+              if ss.timerState != .running {
+                return
+              }
               print("Done!!")
+              
               // When progress complete, set timer running false
               
-              self.finishProgress()
-              self.isPomoTimerRunning = false
-              self.timerState = .done
-                self.updateDonePomo()
-                self.pauseBtn.isHidden = true
+              ss.finishProgress()
+              ss.isPomoTimerRunning = false
+              ss.timerState = .done
+              ss.updateDonePomo()
+              ss.pauseBtn.isHidden = true
                 
                 // Show up alert
                 let alert = UIAlertController(title: "ppoggle completed", message: "Time to rest", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("확인", comment: "Default action"), style: .default, handler: { _ in
                   NSLog("The \"OK\" alert occured.")
                 }))
-                self.present(alert, animated: true, completion: nil)
+                ss.present(alert, animated: true, completion: nil)
             }
       break;
     default:
@@ -169,7 +172,7 @@ class TimerController: UIViewController {
   
   func resumePomoTimer() {
     self.progressRing.innerRingColor = PGColors.red
-    self.progressRing.maxValue = 25*60
+    self.progressRing.maxValue = 25 * 60
     
     isReset = false
     
@@ -184,7 +187,7 @@ class TimerController: UIViewController {
 	func startBreakTimer() {
 		
 		self.progressRing.innerRingColor = PGColors.yellow
-		self.progressRing.maxValue = 5*60
+		self.progressRing.maxValue = 5 * 60
 		self.progressRing.value = 0
 		NSLog("isPomoTimerRunning = \(self.isPomoTimerRunning) before reset, at StartBreakTimer")
 		
@@ -195,7 +198,7 @@ class TimerController: UIViewController {
     #if DEBUG
 			NSLog("progressRing.value = \(self.progressRing.currentValue) after reset, at StartBreakTimer")
     #endif
-			self.progressRing.startProgress(to: 5*60, duration: 5*60){
+			self.progressRing.startProgress(to: 5 * 60, duration: 5 * 60){
 				print("Done!!")
 				// When progress complete, set timer running false
 				
@@ -286,13 +289,23 @@ class TimerController: UIViewController {
 	
 	@objc func resetBtnClick(_ sender: UIButton?) {
 		isPomoTimerRunning = false
-		
+		timerState = .initialized
     #if DEBUG
     print("resetBtnClicked")
     #endif
     
 		// Animation stop
-		self.progressRing.startProgress(to: 0, duration: 0, completion: {
+    
+    progressRing.resetProgress()
+    timerLabel.text = "\(pomoMin):00"
+    startBtn.isHidden = false
+    pauseBtn.isHidden = true
+    
+    // Timer invalidate
+    timer.invalidate()
+    
+		/*
+    self.progressRing.startProgress(to: 0, duration: 0, completion: {
       [weak self] in
       guard let ss = self else { return }
 			ss.progressRing.resetProgress()
@@ -305,5 +318,6 @@ class TimerController: UIViewController {
 			ss.timer.invalidate()
 			
 		})
+     */
 	}
 }

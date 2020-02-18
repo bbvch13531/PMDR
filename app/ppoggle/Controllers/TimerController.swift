@@ -14,63 +14,61 @@ import SnapKit
 
 class TimerController: UIViewController {
 	
-	
-	// Using lazy var
-    var progressRing = UICircularProgressRing().then {
-        $0.frame = CGRect(x: 45, y: 230, width: 300, height: 300)
-        $0.backgroundColor = .white
-        $0.outerRingColor = PGColors.gray
-        $0.outerRingWidth = 25
-        $0.startAngle = 270
-        $0.innerRingWidth = 25
-        $0.ringStyle = .ontop
-        $0.shouldShowValueText = false
-        $0.animationStyle = CAMediaTimingFunctionName.linear.rawValue
-        $0.font = UIFont.boldSystemFont(ofSize: 40)
-    }
+  var progressRing = UICircularProgressRing().then {
+      $0.frame = CGRect(x: 45, y: 230, width: 300, height: 300)
+      $0.backgroundColor = .white
+      $0.outerRingColor = PGColors.gray
+      $0.outerRingWidth = 25
+      $0.startAngle = 270
+      $0.innerRingWidth = 25
+      $0.ringStyle = .ontop
+      $0.shouldShowValueText = false
+      $0.animationStyle = CAMediaTimingFunctionName.linear.rawValue
+      $0.font = UIFont.boldSystemFont(ofSize: 40)
+  }
     
-	// Pomo timer
-	var timer = Timer()
-	
-    var timerState = TimerState.initialized
+  // Pomo timer
+  var timer = Timer()
   
-    var startBtn = UIButton().then {
-        $0.frame = CGRect(x: 40, y: 550, width: 150, height: 70)
-        $0.setTitle("start", for: .normal)
-        $0.backgroundColor = PGColors.red
-        $0.layer.cornerRadius = 15
-        $0.titleLabel?.font = PGFonts.buttonTitle
-    }
-    
-    var pauseBtn = UIButton().then {
-        $0.frame = CGRect(x: 40, y: 550, width: 150, height: 70)
-        $0.setTitle("pause", for: .normal)
-        $0.backgroundColor = PGColors.red
-        $0.layer.cornerRadius = 15
-        $0.titleLabel?.font = PGFonts.buttonTitle
-        $0.isHidden = true
-    }
-    
-    var resetBtn = UIButton().then {
-        $0.frame = CGRect(x: 200, y: 550, width: 150, height: 70)
-        $0.setTitle("reset", for: .normal)
-        $0.backgroundColor = PGColors.red
-        $0.layer.cornerRadius = 15
-        $0.titleLabel?.font = PGFonts.buttonTitle
-    }
-    
-    var completedPomoLabel = UILabel().then {
-        $0.frame = CGRect(x: 120, y: 160, width: 200, height: 50)
-        $0.font = PGFonts.labelTitle
-        $0.text = "Today : 0 / 20"
-    }
-    
-    var timerLabel = UILabel().then {
-        $0.frame = CGRect(x: 140, y: 350, width: 200, height: 50)
-        $0.font = PGFonts.buttonTitle
-        $0.text = "00:00"
-        $0.textColor = .black
-    }
+  var timerState = TimerState.initialized
+
+  var startBtn = UIButton().then {
+      $0.frame = CGRect(x: 40, y: 550, width: 150, height: 70)
+      $0.setTitle("start", for: .normal)
+      $0.backgroundColor = PGColors.red
+      $0.layer.cornerRadius = 15
+      $0.titleLabel?.font = PGFonts.buttonTitle
+  }
+  
+  var pauseBtn = UIButton().then {
+      $0.frame = CGRect(x: 40, y: 550, width: 150, height: 70)
+      $0.setTitle("pause", for: .normal)
+      $0.backgroundColor = PGColors.red
+      $0.layer.cornerRadius = 15
+      $0.titleLabel?.font = PGFonts.buttonTitle
+      $0.isHidden = true
+  }
+  
+  var resetBtn = UIButton().then {
+      $0.frame = CGRect(x: 200, y: 550, width: 150, height: 70)
+      $0.setTitle("reset", for: .normal)
+      $0.backgroundColor = PGColors.red
+      $0.layer.cornerRadius = 15
+      $0.titleLabel?.font = PGFonts.buttonTitle
+  }
+  
+  var completedPomoLabel = UILabel().then {
+      $0.frame = CGRect(x: 120, y: 160, width: 200, height: 50)
+      $0.font = PGFonts.labelTitle
+      $0.text = "Today : 0 / 20"
+  }
+  
+  var timerLabel = UILabel().then {
+      $0.frame = CGRect(x: 140, y: 350, width: 200, height: 50)
+      $0.font = PGFonts.buttonTitle
+      $0.text = "00:00"
+      $0.textColor = .black
+  }
 
 	// State of current timer
 	var minutes: Int = 25
@@ -86,23 +84,38 @@ class TimerController: UIViewController {
 	var isPomoTimerRunning = false
 	var isReset = false
 	
+  var manager: PomoManager?
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  init(manager: PomoManager) {
+    super.init(nibName: nil, bundle: nil)
+    self.manager = manager
+  }
+  
 	override func viewDidLoad() {
 		// Set up UI
 
-        self.view.addSubview(startBtn)
-        self.view.addSubview(pauseBtn)
-        self.view.addSubview(resetBtn)
+//    guard var pomoInfo = pomoInfo else { return }
+    
+    let data = ["asd":3]
+    PomoManager.shared.pomoDone.append(data)
+    self.view.addSubview(startBtn)
+    self.view.addSubview(pauseBtn)
+    self.view.addSubview(resetBtn)
+    
+    startBtn.titleLabel?.font = PGFonts.buttonTitle
+    startBtn.addTarget(self, action: #selector(self.startBtnClick), for: .touchDown)
+    pauseBtn.addTarget(self, action: #selector(self.pauseBtnClick), for: .touchDown)
+    resetBtn.addTarget(self, action: #selector(self.resetBtnClick), for: .touchDown)
+    
+    self.view.addSubview(progressRing)
+    self.view.addSubview(timerLabel)
+    self.view.addSubview(completedPomoLabel)
         
-        startBtn.titleLabel?.font = PGFonts.buttonTitle
-        startBtn.addTarget(self, action: #selector(self.startBtnClick), for: .touchDown)
-        pauseBtn.addTarget(self, action: #selector(self.pauseBtnClick), for: .touchDown)
-        resetBtn.addTarget(self, action: #selector(self.resetBtnClick), for: .touchDown)
-        
-        self.view.addSubview(progressRing)
-        self.view.addSubview(timerLabel)
-        self.view.addSubview(completedPomoLabel)
-        
-        
+
 //    Check installed font
 //        checkFont()
 
@@ -140,29 +153,29 @@ class TimerController: UIViewController {
     case .running:
       self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
             
-            // Start progressRing animation start
-            self.progressRing.startProgress(to: 25 * 60, duration: 25 * 60) {
-              [weak self] in guard let ss = self else { return }
-              if ss.timerState != .running {
-                return
-              }
-              print("Done!!")
-              
-              // When progress complete, set timer running false
-              
-              ss.finishProgress()
-              ss.isPomoTimerRunning = false
-              ss.timerState = .done
-              ss.updateDonePomo()
-              ss.pauseBtn.isHidden = true
-                
-                // Show up alert
-                let alert = UIAlertController(title: "ppoggle completed", message: "Time to rest", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("확인", comment: "Default action"), style: .default, handler: { _ in
-                  NSLog("The \"OK\" alert occured.")
-                }))
-                ss.present(alert, animated: true, completion: nil)
-            }
+        // Start progressRing animation start
+        self.progressRing.startProgress(to: 25 * 60, duration: 25 * 60) {
+          [weak self] in guard let ss = self else { return }
+          if ss.timerState != .running {
+            return
+          }
+          print("Done!!")
+          
+          // When progress complete, set timer running false
+          
+          ss.finishProgress()
+          ss.isPomoTimerRunning = false
+          ss.timerState = .done
+          ss.updateDonePomo()
+          ss.pauseBtn.isHidden = true
+            
+            // Show up alert
+            let alert = UIAlertController(title: "ppoggle completed", message: "Time to rest", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("확인", comment: "Default action"), style: .default, handler: { _ in
+              NSLog("The \"OK\" alert occured.")
+            }))
+            ss.present(alert, animated: true, completion: nil)
+        }
       break;
     default:
       break;
@@ -235,7 +248,7 @@ class TimerController: UIViewController {
 		}
 		// TimerLabel text update every seconds
 		self.timerLabel.text = "\(String(format: "%02d", minutes)):\(String(format: "%02d", seconds))"
-        print(self.timerLabel.text)
+    print(self.timerLabel.text)
 	}
   
 	func finishProgress() {

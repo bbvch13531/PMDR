@@ -42,11 +42,10 @@ class ReportController: UIViewController {
   }
   
 	override func viewDidLoad() {
-    self.view.addSubview(horizontalLine_1)
-    self.view.addSubview(horizontalLine_2)
-    self.view.addSubview(horizontalLine_3)
-    self.view.addSubview(titleLabel)
-    self.view.addSubview(todayLabel)
+        self.view.addSubview(horizontalLine_1)
+        self.view.addSubview(horizontalLine_2)
+        self.view.addSubview(horizontalLine_3)
+        self.view.addSubview(titleLabel)
+        self.view.addSubview(todayLabel)
 	}
-  
 }

@@ -18,6 +18,7 @@
 		9F6A158D23D85D7700B13C4A /* Spoqa Han Sans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F6A158923D85D7700B13C4A /* Spoqa Han Sans Regular.ttf */; };
 		9F6A158E23D85D7700B13C4A /* Spoqa Han Sans Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F6A158A23D85D7700B13C4A /* Spoqa Han Sans Thin.ttf */; };
 		9F6A158F23D85D7700B13C4A /* Spoqa Han Sans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F6A158B23D85D7700B13C4A /* Spoqa Han Sans Bold.ttf */; };
+		9F6F5E2723FC03FB008A2841 /* PomoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6F5E2623FC03FB008A2841 /* PomoInfo.swift */; };
 		9F7F4FBC21DCB52F00BD9C8B /* SettingCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F4FBB21DCB52F00BD9C8B /* SettingCustomCell.swift */; };
 		9F7F4FBE21DCD61500BD9C8B /* SettingVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7F4FBD21DCD61500BD9C8B /* SettingVO.swift */; };
 		9FC8581321B6CE3B00BA05CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC8581221B6CE3B00BA05CA /* AppDelegate.swift */; };
@@ -54,6 +55,7 @@
 		9F6A158923D85D7700B13C4A /* Spoqa Han Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Regular.ttf"; sourceTree = "<group>"; };
 		9F6A158A23D85D7700B13C4A /* Spoqa Han Sans Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Thin.ttf"; sourceTree = "<group>"; };
 		9F6A158B23D85D7700B13C4A /* Spoqa Han Sans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Bold.ttf"; sourceTree = "<group>"; };
+		9F6F5E2623FC03FB008A2841 /* PomoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoInfo.swift; sourceTree = "<group>"; };
 		9F7F4FBB21DCB52F00BD9C8B /* SettingCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCustomCell.swift; sourceTree = "<group>"; };
 		9F7F4FBD21DCD61500BD9C8B /* SettingVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVO.swift; sourceTree = "<group>"; };
 		9FC8580F21B6CE3B00BA05CA /* ppoggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ppoggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +201,7 @@
 				9FE72C5C2458500000741ED1 /* PomoTimerData.swift */,
 				9F7F4FBB21DCB52F00BD9C8B /* SettingCustomCell.swift */,
 				9F7F4FBD21DCD61500BD9C8B /* SettingVO.swift */,
+				9F6F5E2623FC03FB008A2841 /* PomoInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F6F5E2723FC03FB008A2841 /* PomoInfo.swift in Sources */,
 				9FE1496E21D89C37005E8D1F /* ReportController.swift in Sources */,
 				9F7F4FBE21DCD61500BD9C8B /* SettingVO.swift in Sources */,
 				9F0541CC21D3D96C000B8933 /* SettingController.swift in Sources */,

@@ -13,10 +13,10 @@ class PGTabBarController : UITabBarController {
 	
 	override func viewDidLoad() {
     var pomoManager = PomoManager()
-    
-    let timerController = TimerController(manager: pomoManager)
+    var pomoInfo = PomoInfo()
+    let timerController = TimerController(pomoInfo: pomoInfo)
 		let mypomoController = MypomoController()
-    let reportController = ReportController(manager: pomoManager)
+    let reportController = ReportController(pomoInfo: pomoInfo)
 		let settingController = SettingController()
 		
 		self.viewControllers = [timerController, mypomoController, reportController, settingController]

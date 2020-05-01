@@ -27,6 +27,7 @@
 		9FE1496E21D89C37005E8D1F /* ReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1496D21D89C37005E8D1F /* ReportController.swift */; };
 		9FE1497021D89C52005E8D1F /* UserGroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1496F21D89C52005E8D1F /* UserGroupController.swift */; };
 		9FE1497221D89C67005E8D1F /* MypomoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1497121D89C67005E8D1F /* MypomoController.swift */; };
+		9FF3622B242A1FB200073E20 /* ReportCategoryProcessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF3622A242A1FB200073E20 /* ReportCategoryProcessView.swift */; };
 		F0A586C2CE480C6F624A540D /* libPods-ppoggle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 112E06484D66E9A17FF5BA62 /* libPods-ppoggle.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		9FE1496D21D89C37005E8D1F /* ReportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportController.swift; sourceTree = "<group>"; };
 		9FE1496F21D89C52005E8D1F /* UserGroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroupController.swift; sourceTree = "<group>"; };
 		9FE1497121D89C67005E8D1F /* MypomoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypomoController.swift; sourceTree = "<group>"; };
+		9FF3622A242A1FB200073E20 /* ReportCategoryProcessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReportCategoryProcessView.swift; path = ppoggle/Report/ReportCategoryProcessView.swift; sourceTree = SOURCE_ROOT; };
 		D1C9B106BB00757C6BCA853D /* Pods-ppoggle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ppoggle.release.xcconfig"; path = "Pods/Target Support Files/Pods-ppoggle/Pods-ppoggle.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,9 +158,9 @@
 				9FE1497321D8D014005E8D1F /* Resources */,
 				9F3A09B523E996AB00276F4D /* Assets.xcassets */,
 				9F3A09B723E9970600276F4D /* Base.lproj */,
-				9FC8ED1F21FBFA8A0005D124 /* Controllers */,
 				9F6A157E23D8570300B13C4A /* Utility.swift */,
-				9FC8ED2021FBFAF00005D124 /* Views */,
+				9FC8ED1F21FBFA8A0005D124 /* Controllers */,
+				9FF3622C242A1FD900073E20 /* Report */,
 				9FC8ED2121FBFAF70005D124 /* Models */,
 			);
 			path = ppoggle;
@@ -178,19 +180,11 @@
 			children = (
 				9FE1497121D89C67005E8D1F /* MypomoController.swift */,
 				9F0541C921D3D95F000B8933 /* TimerController.swift */,
-				9FE1496D21D89C37005E8D1F /* ReportController.swift */,
 				9FE1496F21D89C52005E8D1F /* UserGroupController.swift */,
 				9F0541CD21D3DEC2000B8933 /* PGTabBarController.swift */,
 				9F0541CB21D3D96C000B8933 /* SettingController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		9FC8ED2021FBFAF00005D124 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		9FC8ED2121FBFAF70005D124 /* Models */ = {
@@ -209,6 +203,15 @@
 				9F6A157823D8556100B13C4A /* Fonts */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		9FF3622C242A1FD900073E20 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				9FE1496D21D89C37005E8D1F /* ReportController.swift */,
+				9FF3622A242A1FB200073E20 /* ReportCategoryProcessView.swift */,
+			);
+			path = Report;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +353,7 @@
 				9FE1497021D89C52005E8D1F /* UserGroupController.swift in Sources */,
 				9F0541CA21D3D95F000B8933 /* TimerController.swift in Sources */,
 				9FC8581321B6CE3B00BA05CA /* AppDelegate.swift in Sources */,
+				9FF3622B242A1FB200073E20 /* ReportCategoryProcessView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

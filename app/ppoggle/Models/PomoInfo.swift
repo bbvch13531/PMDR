@@ -8,10 +8,9 @@
 
 import Foundation
 
-struct PomoInfo {
+class PomoInfo {
 
-  var pomoDone: [[String:Int]] = [[String:Int]]()
-  
+  var pomoDone: [String:Int] = [String:Int]()
   
 }
 

@@ -28,6 +28,7 @@
 		9FE1496E21D89C37005E8D1F /* ReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1496D21D89C37005E8D1F /* ReportController.swift */; };
 		9FE1497021D89C52005E8D1F /* UserGroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1496F21D89C52005E8D1F /* UserGroupController.swift */; };
 		9FE1497221D89C67005E8D1F /* MypomoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1497121D89C67005E8D1F /* MypomoController.swift */; };
+		9FE72C5D2458500000741ED1 /* PomoTimerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE72C5C2458500000741ED1 /* PomoTimerData.swift */; };
 		F0A586C2CE480C6F624A540D /* libPods-ppoggle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 112E06484D66E9A17FF5BA62 /* libPods-ppoggle.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		9FE1496D21D89C37005E8D1F /* ReportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportController.swift; sourceTree = "<group>"; };
 		9FE1496F21D89C52005E8D1F /* UserGroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroupController.swift; sourceTree = "<group>"; };
 		9FE1497121D89C67005E8D1F /* MypomoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypomoController.swift; sourceTree = "<group>"; };
+		9FE72C5C2458500000741ED1 /* PomoTimerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoTimerData.swift; sourceTree = "<group>"; };
 		D1C9B106BB00757C6BCA853D /* Pods-ppoggle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ppoggle.release.xcconfig"; path = "Pods/Target Support Files/Pods-ppoggle/Pods-ppoggle.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +192,7 @@
 		9FC8ED2121FBFAF70005D124 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9FE72C5C2458500000741ED1 /* PomoTimerData.swift */,
 				9F7F4FBB21DCB52F00BD9C8B /* SettingCustomCell.swift */,
 				9F7F4FBD21DCD61500BD9C8B /* SettingVO.swift */,
 				9F6F5E2623FC03FB008A2841 /* PomoInfo.swift */,
@@ -350,6 +353,7 @@
 				9F7F4FBC21DCB52F00BD9C8B /* SettingCustomCell.swift in Sources */,
 				9FE1497221D89C67005E8D1F /* MypomoController.swift in Sources */,
 				9F6A157F23D8570300B13C4A /* Utility.swift in Sources */,
+				9FE72C5D2458500000741ED1 /* PomoTimerData.swift in Sources */,
 				9FE1497021D89C52005E8D1F /* UserGroupController.swift in Sources */,
 				9F0541CA21D3D95F000B8933 /* TimerController.swift in Sources */,
 				9FC8581321B6CE3B00BA05CA /* AppDelegate.swift in Sources */,

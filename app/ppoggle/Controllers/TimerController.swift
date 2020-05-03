@@ -12,10 +12,12 @@ import UICircularProgressRing
 import SnapKit
 
 class TimerController: UIViewController {
+
 	
     var progressRing: UICircularProgressRing = {
         let ring = UICircularProgressRing()
         ring.frame = CGRect(x: 45, y: 230, width: 300, height: 300)
+
         ring.backgroundColor = .white
         ring.outerRingColor = PGColors.gray
         ring.outerRingWidth = 25
@@ -27,7 +29,7 @@ class TimerController: UIViewController {
         ring.font = UIFont.boldSystemFont(ofSize: 40)
         return ring
     }()
-    
+
   // Pomo timer
     var timer = Timer()
   
@@ -194,6 +196,7 @@ class TimerController: UIViewController {
             break;
         default:
             break;
+
         }
         timerState = .running
 	}
@@ -319,7 +322,9 @@ class TimerController: UIViewController {
         timerState = .running
 		startBtn.isHidden = true
 		pauseBtn.isHidden = false
+
     
+
 		startPomoTimer()
 		
 	}

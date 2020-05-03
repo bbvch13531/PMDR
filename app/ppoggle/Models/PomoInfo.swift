@@ -8,15 +8,13 @@
 
 import Foundation
 
-class PomoInfo {
+struct PomoInfo: Codable {
+    var date: String?
+    var pomoDone: Int?
+    
+    init(date: String, pomoDone: Int) {
+        self.date = date
+        self.pomoDone = pomoDone
+    }
 
-  var pomoDone: [String:Int] = [String:Int]()
-  
-}
-
-class PomoManager {
-  static let shared = PomoManager()
-  
-  var pomoDone: [[String:Int]] = [[String:Int]]()
-  
 }

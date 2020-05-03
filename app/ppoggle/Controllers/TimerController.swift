@@ -97,37 +97,45 @@ class TimerController: UIViewController {
 	
     var pomoInfo: PomoInfo?
   
-    required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
+    var currentDate: String {
+        get {
+            let date = Date()
+            let calendar = Calendar.current
+            let year = calendar.component(.year, from: date)
+            let month = calendar.component(.month, from: date)
+            let day = calendar.component(.day, from: date)
+            
+            return "\(year)-\(month)-\(day)"
+        }
     }
+    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
   
-    init(pomoInfo: PomoInfo) {
-        super.init(nibName: nil, bundle: nil)
-        self.pomoInfo = pomoInfo
-    }
+//    init(pomoInfo: PomoInfo) {
+//        super.init(nibName: nil, bundle: nil)
+//        self.pomoInfo = pomoInfo
+//    }
   
 	override func viewDidLoad() {
-		// Set up UI
+        super.viewDidLoad()
+        // Set up UI
     
         view.addSubview(startBtn)
         view.addSubview(pauseBtn)
         view.addSubview(resetBtn)
 
         startBtn.titleLabel?.font = PGFonts.buttonTitle
-        startBtn.addTarget(self, action: #selector(self.startBtnClick), for: .touchDown)
-        pauseBtn.addTarget(self, action: #selector(self.pauseBtnClick), for: .touchDown)
-        resetBtn.addTarget(self, action: #selector(self.resetBtnClick), for: .touchDown)
+        startBtn.addTarget(self, action: #selector(startBtnClick), for: .touchDown)
+        pauseBtn.addTarget(self, action: #selector(pauseBtnClick), for: .touchDown)
+        resetBtn.addTarget(self, action: #selector(resetBtnClick), for: .touchDown)
 
         view.addSubview(progressRing)
         view.addSubview(timerLabel)
         view.addSubview(completedPomoLabel)
         
-        guard let pomoInfo = pomoInfo else { return }
-//        guard var asd = pomoInfo.pomoDone["default"] else { return }
-//        asd = 10
-        pomoInfo.pomoDone["default"] = 10
-//    Check installed font
-//        checkFont()
+        print(currentDate)
 	}
   
 	override func viewWillDisappear(_ animated: Bool) {
@@ -153,7 +161,6 @@ class TimerController: UIViewController {
         NSLog("progressRing.value = \(String(describing: self.progressRing.currentValue)) after reset, at StartPomoTimer")
 		NSLog("progressRing.value = \(progressRing.currentValue) after reset, at StartPomoTimer")
     #endif
-    
 
         switch timerState {
         case .paused:
@@ -168,7 +175,6 @@ class TimerController: UIViewController {
               if ss.timerState != .running {
                 return
               }
-              print("Done!!")
               
               // When progress complete, set timer running false
               
@@ -244,15 +250,31 @@ class TimerController: UIViewController {
 	}
   
 	func updateDonePomo() {
-        guard var pomoInfo = pomoInfo else { return }
-        
         donePomo += 1
         
-        if var storedVal = pomoInfo.pomoDone["default"] {
-            pomoInfo.pomoDone["default"] = storedVal + 1
+        let pomoInfo = PomoInfo(date: currentDate, pomoDone: donePomo)
+        // save pomoDone
+        let userDefaults = UserDefaults.standard
+        let encoder = JSONEncoder()
+        do {
+            let jsonData = try encoder.encode(pomoInfo)
+            userDefaults.set(jsonData, forKey: currentDate)
+        } catch {
+            print(error)
+        }
+        
+        let info = userDefaults.data(forKey: currentDate)
+        let decoder = JSONDecoder()
+        
+        do {
+            let pomo = try decoder.decode(PomoInfo.self, from: info!)
+//            print("\(pomo.date) \(pomo.pomoDone)")
+        } catch {
+            print(error)
         }
         
         completedPomoLabel.text = "Today : \(donePomo) / \(targetPomo)"
+        
 	}
   
 	@objc func updateTimer() {
@@ -262,14 +284,14 @@ class TimerController: UIViewController {
 			seconds = 59
 		} else {
 			seconds -= 1
-		}
+        }
 		// TimerLabel text update every seconds
 		timerLabel.text = "\(String(format: "%02d", minutes)):\(String(format: "%02d", seconds))"
-    print(timerLabel.text)
 	}
   
 	func finishProgress() {
-		
+		// save pomoInfo
+        
 		// When progress finish, check isPomoTimerRunning and start timer
 		timer.invalidate()
 		if isPomoTimerRunning {
@@ -294,7 +316,7 @@ class TimerController: UIViewController {
 	@objc func startBtnClick(_ sender: UIButton?) {
 		// Set Timer running true
 //		self.isPomoTimerRunning = true
-    timerState = .running
+        timerState = .running
 		startBtn.isHidden = true
 		pauseBtn.isHidden = false
     

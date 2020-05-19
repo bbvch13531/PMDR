@@ -1,8 +1,8 @@
 PODS:
-  - Alamofire (5.0.0-beta.3)
+  - Alamofire (5.0.5)
   - SnapKit (4.2.0)
-  - SwiftLint (0.32.0)
-  - UICircularProgressRing (3.0.0)
+  - SwiftLint (0.39.2)
+  - UICircularProgressRing (6.5.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-beta.3)
@@ -11,17 +11,17 @@ DEPENDENCIES:
   - UICircularProgressRing
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - Alamofire
     - SnapKit
     - SwiftLint
     - UICircularProgressRing
 
 SPEC CHECKSUMS:
-  Alamofire: 50d6fa7e8cbe7f84559e86ab641ffd029db655f8
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
-  UICircularProgressRing: 3b472692ffca84060fd444ea5c0b387161067c54
+  SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
+  UICircularProgressRing: e6852e8f88e296cbbbe2720cccb55241acda6708
 
 PODFILE CHECKSUM: df1f25d18591df693c9012d4255b7850218c4629
 

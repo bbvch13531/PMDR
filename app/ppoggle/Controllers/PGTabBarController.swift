@@ -15,7 +15,7 @@ class PGTabBarController : UITabBarController {
     
     let timerController = TimerController()
 		let mypomoController = MypomoController()
-        let reportController = ReportController(collectionViewLayout: UICollectionViewFlowLayout())
+        let reportController = ReportController(collectionViewLayout: ReportCollectionViewFlowLayout())
 		let settingController = SettingController()
 		
 		self.viewControllers = [timerController, mypomoController, reportController, settingController]

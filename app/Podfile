@@ -6,6 +6,7 @@ target 'ppoggle' do
     pod 'Alamofire', '~> 5.0.0-beta.3'
 	pod 'SwiftLint'
 	pod 'SnapKit', '4.2.0'
+	pod 'Charts'
 end
 
 post_install do |installer|

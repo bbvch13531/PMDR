@@ -1,11 +1,15 @@
 PODS:
   - Alamofire (5.0.0-beta.3)
+  - Charts (3.5.0):
+    - Charts/Core (= 3.5.0)
+  - Charts/Core (3.5.0)
   - SnapKit (4.2.0)
   - SwiftLint (0.32.0)
   - UICircularProgressRing (3.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-beta.3)
+  - Charts
   - SnapKit (= 4.2.0)
   - SwiftLint
   - UICircularProgressRing
@@ -16,13 +20,16 @@ SPEC REPOS:
     - SnapKit
     - SwiftLint
     - UICircularProgressRing
+  trunk:
+    - Charts
 
 SPEC CHECKSUMS:
   Alamofire: 50d6fa7e8cbe7f84559e86ab641ffd029db655f8
+  Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
   UICircularProgressRing: 3b472692ffca84060fd444ea5c0b387161067c54
 
-PODFILE CHECKSUM: df1f25d18591df693c9012d4255b7850218c4629
+PODFILE CHECKSUM: 0fbb61ee898dba5cc13c7e4a2992debc299c9a67
 
 COCOAPODS: 1.9.1

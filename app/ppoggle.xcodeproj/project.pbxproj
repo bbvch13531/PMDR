@@ -10,6 +10,8 @@
 		9F0541CA21D3D95F000B8933 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0541C921D3D95F000B8933 /* TimerController.swift */; };
 		9F0541CC21D3D96C000B8933 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0541CB21D3D96C000B8933 /* SettingController.swift */; };
 		9F0541CE21D3DEC2000B8933 /* PGTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0541CD21D3DEC2000B8933 /* PGTabBarController.swift */; };
+		9F08D2742461468900EF78B9 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F08D2732461468900EF78B9 /* UserDefaultsManager.swift */; };
+		9F08D2992461B92300EF78B9 /* ReportCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F08D2982461B92300EF78B9 /* ReportCollectionViewFlowLayout.swift */; };
 		9F365531245EFE67004F08DB /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F365530245EFE67004F08DB /* ReportCell.swift */; };
 		9F3A09B623E996AC00276F4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F3A09B523E996AB00276F4D /* Assets.xcassets */; };
 		9F3A09BC23E9970600276F4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3A09B823E9970600276F4D /* LaunchScreen.storyboard */; };
@@ -48,6 +50,8 @@
 		9F0541C921D3D95F000B8933 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		9F0541CB21D3D96C000B8933 /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		9F0541CD21D3DEC2000B8933 /* PGTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGTabBarController.swift; sourceTree = "<group>"; };
+		9F08D2732461468900EF78B9 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		9F08D2982461B92300EF78B9 /* ReportCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		9F365530245EFE67004F08DB /* ReportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCell.swift; sourceTree = "<group>"; };
 		9F3A09B523E996AB00276F4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		9F3A09B923E9970600276F4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 			children = (
 				9FE1497121D89C67005E8D1F /* MypomoController.swift */,
 				9F0541C921D3D95F000B8933 /* TimerController.swift */,
+				9F08D2732461468900EF78B9 /* UserDefaultsManager.swift */,
 				9FE1496F21D89C52005E8D1F /* UserGroupController.swift */,
 				9F0541CD21D3DEC2000B8933 /* PGTabBarController.swift */,
 				9F0541CB21D3D96C000B8933 /* SettingController.swift */,
@@ -212,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				9FE1496D21D89C37005E8D1F /* ReportController.swift */,
+				9F08D2982461B92300EF78B9 /* ReportCollectionViewFlowLayout.swift */,
 				9F365530245EFE67004F08DB /* ReportCell.swift */,
 			);
 			path = Report;
@@ -352,9 +358,11 @@
 				9F0541CE21D3DEC2000B8933 /* PGTabBarController.swift in Sources */,
 				9F7F4FBC21DCB52F00BD9C8B /* SettingCustomCell.swift in Sources */,
 				9FE1497221D89C67005E8D1F /* MypomoController.swift in Sources */,
+				9F08D2992461B92300EF78B9 /* ReportCollectionViewFlowLayout.swift in Sources */,
 				9F6A157F23D8570300B13C4A /* Utility.swift in Sources */,
 				9FE72C5D2458500000741ED1 /* PomoTimerData.swift in Sources */,
 				9FE1497021D89C52005E8D1F /* UserGroupController.swift in Sources */,
+				9F08D2742461468900EF78B9 /* UserDefaultsManager.swift in Sources */,
 				9F0541CA21D3D95F000B8933 /* TimerController.swift in Sources */,
 				9FC8581321B6CE3B00BA05CA /* AppDelegate.swift in Sources */,
 				9F365531245EFE67004F08DB /* ReportCell.swift in Sources */,

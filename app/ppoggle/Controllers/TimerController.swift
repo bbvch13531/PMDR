@@ -119,7 +119,7 @@ class TimerController: UIViewController {
 //        super.init(nibName: nil, bundle: nil)
 //        self.pomoInfo = pomoInfo
 //    }
-  
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
         // Set up UI
@@ -257,29 +257,30 @@ class TimerController: UIViewController {
         
         let pomoInfo = PomoInfo(date: currentDate, pomoDone: donePomo)
         // save pomoDone
-        let userDefaults = UserDefaults.standard
-        let encoder = JSONEncoder()
-        do {
-            let jsonData = try encoder.encode(pomoInfo)
-            userDefaults.set(jsonData, forKey: currentDate)
-        } catch {
-            print(error)
-        }
-        
-        let info = userDefaults.data(forKey: currentDate)
-        let decoder = JSONDecoder()
-        
-        do {
-            let pomo = try decoder.decode(PomoInfo.self, from: info!)
-//            print("\(pomo.date) \(pomo.pomoDone)")
-        } catch {
-            print(error)
-        }
+//        let userDefaults = UserDefaults.standard
+//        let encoder = JSONEncoder()
+//        do {
+//            let jsonData = try encoder.encode(pomoInfo)
+//            userDefaults.set(jsonData, forKey: currentDate)
+//        } catch {
+//            print(error)
+//        }
+//
+//        let info = userDefaults.data(forKey: currentDate)
+//        let decoder = JSONDecoder()
+//
+//        do {
+//            let pomo = try decoder.decode(PomoInfo.self, from: info!)
+////            print("\(pomo.date) \(pomo.pomoDone)")
+//        } catch {
+//            print(error)
+//        }
+        UserDefaultsManager.update(info: pomoInfo)
         
         completedPomoLabel.text = "Today : \(donePomo) / \(targetPomo)"
         
 	}
-  
+    
 	@objc func updateTimer() {
 		if seconds == 0 {
 			minutes -= 1
@@ -322,8 +323,6 @@ class TimerController: UIViewController {
         timerState = .running
 		startBtn.isHidden = true
 		pauseBtn.isHidden = false
-
-    
 
 		startPomoTimer()
 		

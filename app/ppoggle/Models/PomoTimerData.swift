@@ -19,8 +19,8 @@ struct PomoTimerData {
         self.donePomo = donePomo
     }
     
-    static func save() {
-        let dateFormat = date.dateFormat
-        UserDefaults.standard.set(self as Any, forKey: pomoTimerDataKey + )
-    }
+//    static func save() {
+//        let dateFormat = date.dateFormat
+//        UserDefaults.standard.set(self as Any, forKey: pomoTimerDataKey + )
+//    }
 }

@@ -9,12 +9,16 @@
 import Foundation
 
 struct PomoInfo: Codable {
-    var date: String?
-    var pomoDone: Int?
+    var date: String
+    var pomoDone: Int
     
     init(date: String, pomoDone: Int) {
         self.date = date
         self.pomoDone = pomoDone
     }
 
+    func increasedInfo() -> PomoInfo {
+        let newInfo = PomoInfo(date: self.date, pomoDone: self.pomoDone + 1)
+        return newInfo
+    }
 }

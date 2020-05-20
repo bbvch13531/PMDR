@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PomoTimerData {
+struct PomoTimerData: Codable {
     private static let pomoTimerDataKey = "pomo_timer_data_key"
     
     var date: Date
@@ -23,4 +23,5 @@ struct PomoTimerData {
         let dateFormat = date.dateFormat
         UserDefaults.standard.set(self as Any, forKey: pomoTimerDataKey + )
     }
+    
 }

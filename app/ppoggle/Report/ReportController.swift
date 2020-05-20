@@ -9,20 +9,35 @@
 import Foundation
 import UIKit
 import SnapKit
+import Charts
 
-class ReportController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class ReportController: UICollectionViewController {
 
     var pomoInfo = [PomoInfo]()
-    let cellID = "ReportCell"
+    var barChartView: BarChartView = {
+        let chartView = BarChartView(frame: CGRect(x: 50, y: 50, width: 300, height: 300))
+        chartView.setScaleEnabled(false)
+
+        chartView.rightAxis.enabled = false
+        chartView.xAxis.labelPosition = .bottom
+        //        chartView.setVisibleXRangeMaximum(40)
+        //        chartView.setVisibleXRange(minXRange: 10, maxXRange: 14)
+        let yAxis = chartView.leftAxis
+        yAxis.labelPosition = .outsideChart
+
+        chartView.backgroundColor = .darkGray
+        return chartView
+    }()
+    
+    var barValues = [BarChartDataEntry]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(barChartView)
+        view.backgroundColor = .gray
         
         loadPomoInfo()
-        
-        collectionView.backgroundColor = .white
-        collectionView.register(ReportCell.self, forCellWithReuseIdentifier: cellID)
-        (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection = .horizontal
+        loadData()
     }
     
     func loadPomoInfo() {
@@ -33,30 +48,24 @@ class ReportController: UICollectionViewController, UICollectionViewDelegateFlow
         let curMonth = calendar.component(.month, from: currentDate)
         let pastMonth = calendar.component(.month, from: monthBeforeDate)
         
-        print("\(curMonth), \(pastMonth)")
-    }
-    func maxHeight() -> CGFloat {
-        return CGFloat(view.frame.height - 20 - 44 - 100)
-    }
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        pomoInfo = UserDefaultsManager.loadPomoOfDays()
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 30, height: maxHeight())
+    func loadData() {
+        // PomoInfo to barValues
+        // String to Date
+
+//        let curDate = Date()
+//        print(curDate.toString(dateFormat: "yyyy-MM-dd"))
+
+        let dataset = BarChartDataSet(entries: barValues, label: "pomo")
+        let data = BarChartData(dataSet: dataset)
+        barChartView.data = data
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! ReportCell
-        
-            
-        cell.barHeightConstraint?.constant = 200
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 1, bottom: 0, right: 1)
+}
+
+extension ReportController: ChartViewDelegate {
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        print(entry)
     }
 }

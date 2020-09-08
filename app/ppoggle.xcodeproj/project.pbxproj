@@ -135,6 +135,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		9F73BC6C24F8FCBB000D6F6D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9F6A157E23D8570300B13C4A /* Utility.swift */,
+				9F08D2732461468900EF78B9 /* UserDefaultsManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		9FC8580621B6CE3B00BA05CA = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +173,7 @@
 				9FE1497321D8D014005E8D1F /* Resources */,
 				9F3A09B523E996AB00276F4D /* Assets.xcassets */,
 				9F3A09B723E9970600276F4D /* Base.lproj */,
-				9F6A157E23D8570300B13C4A /* Utility.swift */,
+				9F73BC6C24F8FCBB000D6F6D /* Managers */,
 				9FC8ED1F21FBFA8A0005D124 /* Controllers */,
 				9FF3622C242A1FD900073E20 /* Report */,
 				9FC8ED2121FBFAF70005D124 /* Models */,
@@ -186,7 +195,6 @@
 			children = (
 				9FE1497121D89C67005E8D1F /* MypomoController.swift */,
 				9F0541C921D3D95F000B8933 /* TimerController.swift */,
-				9F08D2732461468900EF78B9 /* UserDefaultsManager.swift */,
 				9FE1496F21D89C52005E8D1F /* UserGroupController.swift */,
 				9F0541CD21D3DEC2000B8933 /* PGTabBarController.swift */,
 				9F0541CB21D3D96C000B8933 /* SettingController.swift */,

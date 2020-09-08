@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.0.5)
   - Charts (3.5.0):
+    - Charts/Core (= 3.5.0)
   - Charts/Core (3.5.0)
   - SnapKit (4.2.0)
   - SwiftLint (0.39.2)
@@ -30,4 +31,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 0fbb61ee898dba5cc13c7e4a2992debc299c9a67
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

@@ -138,15 +138,14 @@ class SettingController: UIViewController, UITableViewDelegate, UITableViewDataS
 		}
 	}
 	
-  func numberOfSections(in tableView: UITableView) -> Int {
-		return 4
-	}
-  
-	func setUpList() {
-		self.sectionList.append(["프로필 수정"])
-		self.sectionList.append(["알림"])
-		self.sectionList.append(["서비스 약관","개인정보 처리방침"])
-		self.sectionList.append(["로그아웃","탈퇴하기"])
-
-  }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
+    
+    func setUpList() {
+        self.sectionList.append(["프로필 수정"])
+        self.sectionList.append(["알림"])
+        self.sectionList.append(["서비스 약관","개인정보 처리방침"])
+        self.sectionList.append(["로그아웃","탈퇴하기"])
+    }
 }

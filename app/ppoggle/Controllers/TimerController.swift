@@ -13,28 +13,27 @@ import SnapKit
 
 class TimerController: UIViewController {
 
-	
+    var completedPomoLabel: UILabel = {
+        let label = UILabel()
+        label.font = PGFonts.labelTitle
+        label.text = "Today : 0 / 20"
+        return label
+    }()
+    
     var progressRing: UICircularProgressRing = {
         let ring = UICircularProgressRing()
         ring.frame = CGRect(x: 45, y: 230, width: 300, height: 300)
-
+        ring.style = .ontop
         ring.backgroundColor = .white
         ring.outerRingColor = PGColors.gray
         ring.outerRingWidth = 25
         ring.startAngle = 270
         ring.innerRingWidth = 25
-//        ring.ringStyle = 
         ring.shouldShowValueText = false
-//        ring.animationStyle = CAMediaTimingFunctionName.linear.rawValue
         ring.font = UIFont.boldSystemFont(ofSize: 40)
         return ring
     }()
-
-  // Pomo timer
-    var timer = Timer()
-  
-    var timerState = TimerState.initialized
-
+    
     var startBtn: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 40, y: 550, width: 150, height: 70)
@@ -42,9 +41,10 @@ class TimerController: UIViewController {
         button.backgroundColor = PGColors.red
         button.layer.cornerRadius = 15
         button.titleLabel?.font = PGFonts.buttonTitle
+        button.addTarget(self, action: #selector(startBtnClick), for: .touchUpInside)
         return button
     }()
-  
+
     var pauseBtn: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 40, y: 550, width: 150, height: 70)
@@ -53,6 +53,7 @@ class TimerController: UIViewController {
         button.layer.cornerRadius = 15
         button.titleLabel?.font = PGFonts.buttonTitle
         button.isHidden = true
+        button.addTarget(self, action: #selector(pauseBtnClick), for: .touchUpInside)
         return button
     }()
   
@@ -63,16 +64,10 @@ class TimerController: UIViewController {
         button.backgroundColor = PGColors.red
         button.layer.cornerRadius = 15
         button.titleLabel?.font = PGFonts.buttonTitle
+        button.addTarget(self, action: #selector(resetBtnClick), for: .touchUpInside)
         return button
     }()
   
-    var completedPomoLabel: UILabel = {
-        let label = UILabel()
-        label.frame = CGRect(x: 120, y: 160, width: 200, height: 50)
-        label.font = PGFonts.labelTitle
-        label.text = "Today : 0 / 20"
-        return label
-    }()
 
     var timerLabel: UILabel = {
         let label = UILabel()
@@ -83,6 +78,18 @@ class TimerController: UIViewController {
         return label
     }()
 
+    var debugButton: UIButton = {
+       let button = UIButton(frame: CGRect(x: 50, y: 150, width: 50, height: 50))
+        button.backgroundColor = .red
+        button.addTarget(self, action: #selector(debugFunc), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    // Pomo timer
+    var timer = Timer()
+    var timerState = TimerState.initialized
+    
 	// State of current timer
 	var minutes: Int = 25
 	var seconds: Int = 0
@@ -122,24 +129,37 @@ class TimerController: UIViewController {
     
 	override func viewDidLoad() {
         super.viewDidLoad()
-        // Set up UI
-    
+        
+        view.addSubview(completedPomoLabel)
+        view.addSubview(progressRing)
+        view.addSubview(timerLabel)
         view.addSubview(startBtn)
         view.addSubview(pauseBtn)
         view.addSubview(resetBtn)
 
         startBtn.titleLabel?.font = PGFonts.buttonTitle
-        startBtn.addTarget(self, action: #selector(startBtnClick), for: .touchDown)
-        pauseBtn.addTarget(self, action: #selector(pauseBtnClick), for: .touchDown)
-        resetBtn.addTarget(self, action: #selector(resetBtnClick), for: .touchDown)
 
-        view.addSubview(progressRing)
-        view.addSubview(timerLabel)
-        view.addSubview(completedPomoLabel)
         
+        //debug
+        view.addSubview(debugButton)
         print(currentDate)
+        
+        completedPomoLabel.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(100)
+            make.centerX.equalTo(self.view.snp.centerX)
+            make.height.equalTo(80)
+        }
 	}
-  
+    
+    @objc func debugFunc(_ sender: UIButton) {
+        
+        let pomoInfo = [PomoInfo(date: currentDate, pomoDone: 50), PomoInfo(date: "2020-6-7", pomoDone: 30)]
+        UserDefaultsManager.update(info: pomoInfo[0])
+        UserDefaultsManager.update(info: pomoInfo[1])
+        
+        print("debug")
+    }
+    
 	override func viewWillDisappear(_ animated: Bool) {
 		isPomoTimerRunning = false
 		timer.invalidate()

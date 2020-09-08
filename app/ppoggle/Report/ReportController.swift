@@ -48,7 +48,8 @@ class ReportController: UICollectionViewController {
         let curMonth = calendar.component(.month, from: currentDate)
         let pastMonth = calendar.component(.month, from: monthBeforeDate)
         
-        pomoInfo = UserDefaultsManager.loadPomoOfDays()
+//        pomoInfo = UserDefaultsManager.loadPomoOfDays()
+//        print(pomoInfo.count)
     }
     
     func loadData() {
